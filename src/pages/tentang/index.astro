@@ -1,0 +1,72 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Link from "@/components/Link.astro";
+---
+
+<Layout
+  title="Tentang"
+  description="Tentang Mops Papua - Inisiatif untuk mengumpulkan dan melestarikan cerita lucu khas Papua."
+>
+  <main class="mx-auto max-w-2xl px-4 py-12">
+    <h1 class="mb-8 text-3xl font-bold">Tentang</h1>
+
+    <div class="prose prose-gray dark:prose-invert max-w-none space-y-6">
+      <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+        Website ini diciptakan sebagai wadah untuk mengumpulkan dan
+        menyebarluaskan "mop" — istilah lokal Papua untuk cerita lucu, <em
+          >banyolan</em
+        >, atau kisah ringan yang sering diceritakan dalam dialek Papua. Mop-mop
+        ini merupakan bagian penting dari budaya Papua, yang mencerminkan
+        kekayaan dan keanekaragaman cara orang Papua berbagi cerita dan humor
+        dalam kehidupan sehari-hari.
+      </p>
+
+      <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+        Tujuan utama dari website ini adalah memberikan tempat yang layak bagi
+        mop-mop untuk disimpan dan dinikmati oleh semua orang. Kami ingin
+        memastikan bahwa setiap cerita dan <em>banyolan</em> ini tidak hilang begitu
+        saja, tetapi dapat diakses dan dinikmati oleh banyak orang, kapan saja dan
+        di mana saja.
+      </p>
+
+      <div
+        class="rounded-lg border p-6 bg-gray-50 dark:bg-gray-800/50 dark:border-gray-700"
+      >
+        <h2 class="text-xl font-semibold mb-3">Apa itu Mop?</h2>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+          Mop adalah cerita lucu atau anekdot yang biasanya diceritakan dalam
+          percakapan sehari-hari di Papua. Cerita-cerita ini sering menggunakan
+          dialek Papua dan menggambarkan situasi yang familiar bagi masyarakat
+          lokal. Mop bisa berupa dialog singkat, kisah lucu, atau pengalaman
+          sehari-hari yang diceritakan dengan cara yang menghibur.
+        </p>
+      </div>
+
+      <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+        Website ini diinisiasi oleh Komunitas{" "}
+        <Link
+          href="https://papua-opensource.github.io"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-gray-900 dark:text-gray-100 font-medium hover:underline"
+        >
+          Papua Open Source
+        </Link>
+        , sebuah komunitas yang bertujuan berkontribusi bagi Tanah Papua melalui
+        teknologi dan open source. Kami percaya bahwa melestarikan cerita dan humor
+        lokal adalah bagian penting dari menjaga warisan budaya Papua.
+      </p>
+
+      <div class="border-t dark:border-gray-800 pt-6 mt-8">
+        <h3 class="text-lg font-medium mb-3">Kontribusi</h3>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+          Kami mengundang semua orang yang memiliki mop Papua untuk berbagi
+          cerita mereka. Mop-mop yang dikumpulkan akan dikurasi dan ditampilkan
+          di website ini agar dapat dinikmati oleh lebih banyak orang.
+          Bersama-sama, kita dapat melestarikan kekayaan budaya Papua melalui
+          cerita-cerita lucu yang menghibur dan bermakna.
+        </p>
+      </div>
+    </div>
+  </main>
+</Layout>

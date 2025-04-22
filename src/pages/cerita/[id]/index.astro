@@ -1,0 +1,62 @@
+---
+import { mops } from "@/lib/data";
+import { parseDate } from "@/lib/utils";
+import { Button } from "@/components/ui/button.tsx";
+import { ArrowRight } from "lucide-react";
+import Layout from "@/layouts/Layout.astro";
+import Link from "@/components/Link.astro";
+
+const { id } = Astro.params;
+const mop = mops.find((m) => m.id === id);
+
+if (!mop) {
+  return Astro.redirect("/404/");
+}
+
+const mopDate = parseDate(mop.date);
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+
+if (mopDate > today) {
+  return Astro.redirect("/404/");
+}
+---
+
+<Layout title="" description="">
+  <main class="mx-auto max-w-2xl px-4 py-12">
+    <div class="mb-8 text-center">
+      <h1 class="mb-6 text-3xl font-bold">{mop?.title}</h1>
+      <p class="text-sm text-muted-foreground">{mop?.date}</p>
+    </div>
+
+    <div class="space-y-6">
+      {
+        mop?.content.map((part, index) => (
+          <div class="flex flex-col space-y-2">
+            {part.type === "narration" ? (
+              <p class="border-l-2 border-gray-200 pl-4 text-gray-600 dark:border-gray-700 dark:text-gray-400">
+                {part.content}
+              </p>
+            ) : (
+              <>
+                <div class="font-medium">{part.speaker}</div>
+                <div class="rounded-lg border p-4 dark:border-gray-700">
+                  {part.content}
+                </div>
+              </>
+            )}
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="mt-12 flex items-center justify-end">
+      <Button variant="outline">
+        <Link href="/cerita/" class="flex items-center gap-2">
+          Baca yang Lain
+          <ArrowRight className="h-4 w-4" />
+        </Link>
+      </Button>
+    </div>
+  </main>
+</Layout>

@@ -1,94 +1,81 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
-import ChatBubble from '../components/ChatBubble.astro';
-import { StoryService } from "../lib/mops";
+import Layout from "@/layouts/Layout.astro";
+import Link from "@/components/Link.astro";
 
-const storyService = new StoryService();
+import { mops } from "@/lib/data";
+import { getTodayMop } from "@/lib/utils";
 
-// Tunggu hingga cerita diambil
-await storyService.fetchStories();
-
-const now = new Date();
-const today = now.toISOString().split('T')[0];
-
-let dailyStory;
-const storedDate = Astro.cookies.get('dailyStoryDate')?.value;
-let storedSlug = Astro.cookies.get('dailyStorySlug')?.value;
-
-// Cek apakah ini hari baru atau tidak ada slug yang tersimpan
-if (storedDate !== today || !storedSlug) {
-    // Jika setelah jam 9 pagi, ambil cerita berikutnya dalam urutan
-    if (now.getHours() >= 9) {
-        dailyStory = storyService.getNextStory();
-        storedSlug = dailyStory?.slug;
-        Astro.cookies.set('dailyStoryDate', today, { path: '/' });
-        Astro.cookies.set('dailyStorySlug', storedSlug || '', { path: '/' });
-    } else if (!storedSlug) {
-        // Jika sebelum jam 9 pagi dan tidak ada slug tersimpan, gunakan cerita saat ini
-        storedSlug = storyService.getCurrentStorySlug();
-        Astro.cookies.set('dailyStorySlug', storedSlug || '', { path: '/' });
-    }
-}
-
-// Ambil cerita harian berdasarkan slug yang tersimpan atau ditemukan
-dailyStory = storedSlug ? storyService.getStoryBySlug(storedSlug) : undefined;
+// Ambil mop hari ini
+const todayMop = getTodayMop(mops);
 ---
 
-<MainLayout title="Mops">	
-	<div class="max-w-3xl px-4 pt-6 lg:pt-10 pb-12 sm:px-6 lg:px-8 mx-auto">
-		<div class="max-w-2xl">  		
-			<!-- Content -->
-			{dailyStory ? (
-			<div class="space-y-5 md:space-y-8">
-				<blockquote class="text-center p-4 sm:px-7">
-					<h2 class="text-xl font-medium text-gray-800 md:text-2xl md:leading-normal xl:text-2xl xl:leading-normal dark:text-neutral-200">
-						{dailyStory.title}
-					</h2>
-					<p class="mt-5 text-sm text-gray-800 dark:text-neutral-200">
-						Hari ini, {now.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}
-					</p>
-				</blockquote>
-			
-				<div class="space-y-3 relative border-s-4 ps-4 sm:ps-6 dark:border-neutral-700">     
-					<p class="text-sm text-gray-800 dark:text-neutral-200">
-					{dailyStory.scenes[0]?.content}
-					</p>
-				</div>
-			
-				{/* <!-- List --> */}
-				<div class="space-y-6">
-					{dailyStory.scenes.slice(1).map((scene, index) => (
-					<dl class="flex flex-col sm:flex-row gap-1">
-						{scene.type === 'dialogue' && (
-						<>
-							<ChatBubble speaker={scene.speaker} message={scene.message}/>
-						</>
-						)}
-						{scene.type === 'description' && (
-						<div class="space-y-3 relative border-s-4 ps-4 sm:ps-6 dark:border-neutral-700">     
-							<p class="text-sm text-neutral-800 dark:text-neutral-200">
-							{scene.content}
-							</p>
-						</div>
-						)}
-					</dl>
-					))}
-				</div>
-				{/* <!-- End List --> */}
-				</div>
-			) : (
-				<p class="text-neutral-800 dark:text-neutral-200">Tidak ada cerita harian yang tersedia</p>
-			)}
-			<!-- End Content -->
+<Layout title="Home" description="Welcome to my Astro site!">
+  {
+    !todayMop ? (
+      <main class="mx-auto max-w-2xl px-4 py-12 text-center">
+        <h1 class="mb-6 text-3xl font-bold">Belum Ada Cerita</h1>
+        <p class="mb-8 text-gray-600 dark:text-gray-400">
+          Belum ada cerita yang tersedia untuk hari ini. Silakan kembali lagi
+          nanti.
+        </p>
 
-			<!-- Button -->
-			<div class="mt-12 text-right">
-				<a href="/stories/" class="py-2 px-4 inline-flex items-center gap-x-1 text-xs font-medium rounded-md border border-gray-200 bg-white text-gray-600 hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800">
-					Baca yang Lain
-				<svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-				</a>
-			</div>
-			<!-- End Button -->
-		</div>
-	</div>
-</MainLayout>
+        <a
+          href="/cerita"
+          class="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground"
+        >
+          Lihat Semua Cerita
+        </a>
+      </main>
+    ) : (
+      <main class="mx-auto max-w-2xl px-4 py-12">
+        <div class="mb-8 text-center">
+          <h1 class="mb-6 text-3xl font-bold">{todayMop.title}</h1>
+          <p class="text-sm text-muted-foreground">Hari ini, {todayMop.date}</p>
+        </div>
+
+        <div class="space-y-6">
+          {todayMop.content.map((part: any, index: number) => (
+            <div class="flex flex-col space-y-2">
+              {part.type === "narration" ? (
+                <p class="border-l-2 border-gray-200 pl-4 text-gray-600 dark:border-gray-700 dark:text-gray-400">
+                  {part.content}
+                </p>
+              ) : (
+                <>
+                  <div class="font-medium">{part.speaker}</div>
+                  <div class="rounded-lg border p-4 dark:border-gray-700">
+                    {part.content}
+                  </div>
+                </>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-12 flex items-center justify-end">
+          <Link
+            href="/cerita/"
+            class="inline-flex items-center justify-center gap-2 rounded-md border border-input bg-background px-4 py-2 text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground"
+          >
+            Baca yang Lain
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-4 w-4"
+            >
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </Link>
+        </div>
+      </main>
+    )
+  }
+</Layout>

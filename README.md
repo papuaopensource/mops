@@ -8,12 +8,13 @@ Proyek ini diinisiasi oleh **Komunitas Papua Open Source**, yang berkomitmen ber
 
 Mops dibangun menggunakan:
 - **Astro**: Framework untuk website cepat dan efisien.
+- **React**: Library JavaScript untuk membangun komponen UI interaktif.
 - **TailwindCSS**: CSS framework untuk desain responsif.
-- **Preline UI**: Komponen UI siap pakai.
+- **shadcn/UI**: Komponen UI yang memudahkan kustomisasi.
 
 ## Link Penting
 
-- **Kode Sumber**: [https://github.com/papua-opensource/mops](https://github.com/papua-opensource/mops)
+- **Kode Sumber**: [https://github.com/papuaopensource/mops](https://github.com/papuaopensource/mops)
 - **Website**: [https://mops.web.id](https://mops.web.id)
 
 ## Lisensi
@@ -28,6 +29,8 @@ Kami menyambut kontribusi! Untuk berkontribusi:
 3. Commit perubahan (`git commit -m "Menambahkan fitur X"`).
 4. Push ke branch Anda (`git push origin fitur-anda`).
 5. Buat Pull Request.
+
+> Lihat daftar _issue_ yang dapat dikerjakan [disini](https://github.com/papuaopensource/mops/issues)
 
 ## Kontak
 

@@ -1,0 +1,65 @@
+---
+import { mops } from "@/lib/data";
+import { filterMopsByDate, parseDate } from "@/lib/utils";
+import StoryPageComponent from "@/components/StoryPageComponent";
+import Layout from "@/layouts/Layout.astro";
+
+// Fungsi untuk mendapatkan bulan dan tahun dari string tanggal
+function getMonthYear(dateString: string) {
+  const parts = dateString.split(" ");
+  if (parts.length >= 2) {
+    return `${parts[1]} ${parts[2]}`;
+  }
+  return dateString;
+}
+
+// Filter mops berdasarkan tanggal saat ini
+const availableMops = filterMopsByDate(mops);
+
+// Mendapatkan semua bulan unik dari data mops yang tersedia
+const allMonths = Array.from(
+  new Set(availableMops.map((mop) => getMonthYear(mop.date)))
+).sort((a, b) => {
+  // Mengonversi "Bulan Tahun" menjadi objek Date untuk perbandingan
+  const [monthA, yearA] = a.split(" ");
+  const [monthB, yearB] = b.split(" ");
+
+  // Membandingkan tahun terlebih dahulu
+  if (yearA !== yearB) {
+    return parseInt(yearB) - parseInt(yearA);
+  }
+
+  // Jika tahun sama, bandingkan bulan
+  const monthsOrder: Record<string, number> = {
+    Januari: 0,
+    Februari: 1,
+    Maret: 2,
+    April: 3,
+    Mei: 4,
+    Juni: 5,
+    Juli: 6,
+    Agustus: 7,
+    September: 8,
+    Oktober: 9,
+    November: 10,
+    Desember: 11,
+  };
+
+  return monthsOrder[monthB] - monthsOrder[monthA];
+});
+---
+
+<Layout
+  title="Kumpulan Cerita MOP"
+  description="Temukan berbagai cerita lucu khas Papua"
+>
+  <main class="mx-auto max-w-2xl px-4 py-12">
+    <h1 class="mb-6 text-3xl font-bold">Kumpulan Cerita</h1>
+
+    <StoryPageComponent
+      client:load
+      availableMops={availableMops}
+      allMonths={allMonths}
+    />
+  </main>
+</Layout>
