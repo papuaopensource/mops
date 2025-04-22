@@ -10,6 +10,7 @@ import cloudflare from '@astrojs/cloudflare';
 export default defineConfig({
   site: 'https://mops.web.id',
   trailingSlash: 'always',
+  output: 'server',
 
   vite: {
     plugins: [tailwindcss()]
