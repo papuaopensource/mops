@@ -6,6 +6,8 @@ import { ArrowRight } from "lucide-react";
 import Layout from "@/layouts/Layout.astro";
 import Link from "@/components/Link.astro";
 
+export const prerender = false;
+
 const { id } = Astro.params;
 const mop = mops.find((m) => m.id === id);
 
