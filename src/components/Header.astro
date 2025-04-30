@@ -63,6 +63,21 @@ const isActive = (path: string) => {
             )
           }
         </Link>
+        <Link
+          href="/kontribusi/"
+          class={`relative py-1 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50 ${
+            isActive("/kontribusi/")
+              ? "font-medium text-gray-900 dark:text-gray-50"
+              : ""
+          }`}
+        >
+          kontribusi
+          {
+            isActive("/kontribusi/") && (
+              <span class="absolute bottom-0 left-0 h-0.5 w-full bg-gray-900 dark:bg-gray-50" />
+            )
+          }
+        </Link>
       </nav>
       <!-- <ThemeSelector /> -->
     </div>

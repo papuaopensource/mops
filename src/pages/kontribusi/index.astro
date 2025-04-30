@@ -1,0 +1,44 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import ContributeTabs from "@/components/TabsContributeComponent";
+---
+
+<Layout
+  title="Kontribusi"
+  description="Kontribusi Mops Papua - Berbagai cara untuk berkontribusi dalam melestarikan cerita MOP Papua."
+>
+  <main class="mx-auto px-4 py-12 max-w-4xl">
+    {/* Header Section */}
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold tracking-tight mb-4">
+        Kontribusi ke Mops Papua
+      </h1>
+      <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
+        Mari bersama-sama melestarikan cerita mop Papua dengan berbagai cara
+        kontribusi yang bisa kamu lakukan.
+      </p>
+    </div>
+
+    {/* Tabs Component */}
+    <ContributeTabs client:load />
+
+    {/* Notes Section */}
+    <div class="mt-12 bg-muted p-6 rounded-lg">
+      <h2 class="text-xl font-semibold mb-4">Catatan</h2>
+      <ul class="list-disc pl-5 space-y-2">
+        <li>
+          Semua mop yang dikirimkan akan dikurasi terlebih dahulu sebelum
+          ditampilkan di situs
+        </li>
+        <li>
+          File .txt, .docs, atau .pdf akan dikonversi ke format internal untuk
+          ditampilkan otomatis nantinya
+        </li>
+        <li>
+          Terima kasih atas kontribusi Anda! Mari bersama-sama menjaga dan
+          menyebarkan kebahagiaan Papua!
+        </li>
+      </ul>
+    </div>
+  </main>
+</Layout>
