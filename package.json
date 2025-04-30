@@ -3,9 +3,9 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
+    "dev": "NODE_ENV=development astro dev",
+    "build": "NODE_ENV=production astro build",
+    "preview": "NODE_ENV=production astro preview",
     "astro": "astro"
   },
   "dependencies": {
