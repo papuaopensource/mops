@@ -1,6 +1,6 @@
 # Mops
 
-Selamat datang di **Mops**, sebuah website yang dibuat untuk mengumpulkan dan menyebarluaskan "mop" — istilah lokal Papua untuk cerita lucu, banyolan, atau kisah ringan dalam dialek Papua. Mop-mop ini adalah bagian penting dari budaya Papua, dan kami ingin melestarikannya agar dapat dinikmati semua orang, kapan saja, di mana saja.
+Selamat datang di **Mops**, sebuah website yang dibuat untuk mengumpulkan dan menyebarluaskan "mop" — istilah lokal Papua untuk cerita lucu, anekdot, atau kisah ringan dalam dialek Papua. Mop-mop ini adalah bagian penting dari budaya Papua, dan kami ingin melestarikannya agar dapat dinikmati semua orang, kapan saja, di mana saja.
 
 Proyek ini diinisiasi oleh **Komunitas Papua Open Source**, yang berkomitmen berkontribusi bagi Tanah Papua melalui teknologi open source.
 
