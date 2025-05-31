@@ -9,7 +9,11 @@ import { getTodayMop } from "@/lib/utils";
 const todayMop = getTodayMop(mops);
 ---
 
-<Layout title="Home" description="Welcome to my Astro site!">
+<!-- Lengkapi title dan description yg sesuai -->
+<Layout
+  title="Cerita Mop Papua Hari Ini"
+  description="Baca cerita MOP Papua hari ini. Temukan kisah lucu dan menghibur yang ditulis dalam dialek lokal Papua."
+>
   {
     !todayMop ? (
       <main class="mx-auto max-w-2xl px-4 py-12 text-center">
