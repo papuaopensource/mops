@@ -342,6 +342,43 @@ export const mops = [
         ],
     },
     {
+        id: "belajar-bahasa-inggris",
+        title: "Belajar Bahasa Inggris",
+        date: "31 Mei 2025",
+        content: [
+            {
+                type: "narration",
+                content:
+                    "Di sekolah di kampung, ada guru bahasa Inggris baru yang datang dari kota. Guru ini semangat skali mau ajar anak-anak kampung bahasa Inggris.",
+            },
+            {
+                type: "dialogue",
+                speaker: "Guru",
+                content:
+                    "Anak-anak, hari ini kita belajar kata sapaan dalam bahasa Inggris. Kalau ketemu orang di pagi hari, bilang 'Good Morning'.",
+            },
+            { type: "dialogue", speaker: "Anak-anak", content: "Good Morning!" },
+            { type: "dialogue", speaker: "Guru", content: "Bagus! Kalau siang hari, bilang 'Good Afternoon'." },
+            { type: "dialogue", speaker: "Anak-anak", content: "Good Afternoon!" },
+            { type: "dialogue", speaker: "Guru", content: "Kalau malam, bilang 'Good Evening' atau 'Good Night'." },
+            { type: "narration", content: "Besoknya, guru itu tes anak-anak." },
+            { type: "dialogue", speaker: "Guru", content: "Kalau ketemu orang jam 7 pagi, bilang apa?" },
+            { type: "dialogue", speaker: "Anak", content: "Pace, ko dari mana?" },
+            { type: "dialogue", speaker: "Guru", content: "Bukan, harusnya 'Good Morning'." },
+            {
+                type: "dialogue",
+                speaker: "Anak",
+                content:
+                    "Tapi Pak, di kampung kitong, kalau ketemu orang jam 7 pagi, pasti tanya 'ko dari mana?' karena pasti dia habis dari kebun atau mancing!",
+            },
+            {
+                type: "narration",
+                content:
+                    "Semua anak ketawa, guru juga ikut ketawa. Memang bahasa Inggris harus disesuaikan dengan kebiasaan lokal!",
+            },
+        ],
+    },
+    {
         id: "pace-eskalator",
         title: "Pace dan Eskalator",
         date: "30 Mei 2025",
