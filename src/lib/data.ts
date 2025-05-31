@@ -2,7 +2,7 @@ export const mops = [
     {
         id: "vokal-grup",
         title: "Vocal Grup",
-        date: "10 Mei 2025",
+        date: "10 Juni 2025",
         content: [
             {
                 type: "narration",
@@ -47,7 +47,7 @@ export const mops = [
     {
         id: "topi-baru",
         title: "Topi Baru",
-        date: "9 Mei 2025",
+        date: "9 Juni 2025",
         content: [
             {
                 type: "narration",
@@ -91,7 +91,7 @@ export const mops = [
     {
         id: "cuci-rinso",
         title: "Cuci Pakai Rinso",
-        date: "8 Mei 2025",
+        date: "8 Juni 2025",
         content: [
             {
                 type: "narration",
@@ -131,7 +131,7 @@ export const mops = [
     {
         id: "di-tegur-guru",
         title: "Di Tegur Guru",
-        date: "7 Mei 2025",
+        date: "7 Juni 2025",
         content: [
             {
                 type: "narration",
@@ -171,7 +171,7 @@ export const mops = [
     {
         id: "tanya-banyak",
         title: "Tanya Banyak",
-        date: "6 Mei 2025",
+        date: "6 Juni 2025",
         content: [
             { type: "narration", content: "Anak satu de ke pasar, baru de ke mas yang jualan mainan anak." },
             { type: "dialogue", speaker: "Anak", content: "Om ada wortel kah?" },
@@ -196,7 +196,7 @@ export const mops = [
     {
         id: "muntah-di-pesawat",
         title: "Muntah di Pesawat",
-        date: "5 Mei 2025",
+        date: "5 Juni 2025",
         content: [
             { type: "narration", content: "Yaklep de naik pesawat terus de ketemu orang Jawa satu nama Juna." },
             { type: "narration", content: "Jadi orang Jawa ini de kaya jadi de cerita-cerita dengan Yaklep." },
@@ -225,7 +225,7 @@ export const mops = [
     {
         id: "kebutuhan-kecil",
         title: "Kebutuhan Kecil",
-        date: "4 Mei 2025",
+        date: "4 Juni 2025",
         content: [
             { type: "narration", content: "Nene ajak tete ke kamar." },
             { type: "narration", content: "Nene rayu-rayu tete tapi macam tete pamalas ka.." },
@@ -251,7 +251,7 @@ export const mops = [
     {
         id: "bawa-kolekte",
         title: "Bawa Kolekte",
-        date: "3 Mei 2025",
+        date: "3 Juni 2025",
         content: [
             { type: "narration", content: "Satu kali ada ibadah pas mau kumpul persembahan pendeta panggil ibu yakomina" },
             { type: "dialogue", speaker: "Pendeta", content: "Bu Yakomina, tolong bawakan kolekte" },
@@ -272,7 +272,7 @@ export const mops = [
     {
         id: "pace-hp-baru",
         title: "Pace dan Handphone Baru",
-        date: "2 Mei 2025",
+        date: "2 Juni 2025",
         content: [
             {
                 type: "narration",
@@ -310,7 +310,7 @@ export const mops = [
     {
         id: "mace-ojek-online",
         title: "Mace dan Ojek Online",
-        date: "1 Mei 2025",
+        date: "1 Juni 2025",
         content: [
             {
                 type: "narration",
@@ -344,7 +344,7 @@ export const mops = [
     {
         id: "belajar-bahasa-inggris",
         title: "Belajar Bahasa Inggris",
-        date: "30 April 2025",
+        date: "31 Mei 2025",
         content: [
             {
                 type: "narration",
@@ -381,7 +381,7 @@ export const mops = [
     {
         id: "pace-eskalator",
         title: "Pace dan Eskalator",
-        date: "29 April 2025",
+        date: "30 Mei 2025",
         content: [
             {
                 type: "narration",
@@ -426,7 +426,7 @@ export const mops = [
     {
         id: "mace-restoran",
         title: "Mace di Restoran Cepat Saji",
-        date: "28 April 2025",
+        date: "29 Mei 2025",
         content: [
             {
                 type: "narration",
@@ -475,7 +475,7 @@ export const mops = [
     {
         id: "anak-nakal",
         title: "Anak Nakal",
-        date: "27 April 2025",
+        date: "28 Mei 2025",
         content: [
             {
                 type: "narration",
@@ -530,7 +530,7 @@ export const mops = [
     {
         id: "tes-mata",
         title: "Tes Mata",
-        date: "26 April 2025",
+        date: "27 Mei 2025",
         content: [
             {
                 type: "narration",
@@ -597,7 +597,7 @@ export const mops = [
     {
         id: "ikan-asin",
         title: "Ikan Asin",
-        date: "25 April 2025",
+        date: "26 Mei 2025",
         content: [
             {
                 type: "narration",
@@ -663,7 +663,7 @@ export const mops = [
     {
         id: "salah-paham",
         title: "Salah Paham",
-        date: "24 April 2025",
+        date: "25 Mei 2025",
         content: [
             {
                 type: "narration",
@@ -739,7 +739,7 @@ export const mops = [
     {
         id: "salah-kirim",
         title: "Salah Kirim",
-        date: "23 April 2025",
+        date: "24 Mei 2025",
         content: [
             {
                 type: "narration",
@@ -791,7 +791,7 @@ export const mops = [
     {
         id: "anak-pintar",
         title: "Anak Pintar",
-        date: "22 April 2025",
+        date: "23 Mei 2025",
         content: [
             {
                 type: "narration",
