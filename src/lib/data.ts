@@ -2,7 +2,7 @@ export const mops = [
     {
         id: "vokal-grup",
         title: "Vocal Grup",
-        date: "10 Juni 2025",
+        date: "8 Juni 2025",
         content: [
             {
                 type: "narration",
@@ -47,7 +47,7 @@ export const mops = [
     {
         id: "topi-baru",
         title: "Topi Baru",
-        date: "9 Juni 2025",
+        date: "7 Juni 2025",
         content: [
             {
                 type: "narration",
@@ -91,7 +91,7 @@ export const mops = [
     {
         id: "cuci-rinso",
         title: "Cuci Pakai Rinso",
-        date: "8 Juni 2025",
+        date: "6 Juni 2025",
         content: [
             {
                 type: "narration",
@@ -131,7 +131,7 @@ export const mops = [
     {
         id: "di-tegur-guru",
         title: "Di Tegur Guru",
-        date: "7 Juni 2025",
+        date: "5 Juni 2025",
         content: [
             {
                 type: "narration",
@@ -171,7 +171,7 @@ export const mops = [
     {
         id: "tanya-banyak",
         title: "Tanya Banyak",
-        date: "6 Juni 2025",
+        date: "4 Juni 2025",
         content: [
             { type: "narration", content: "Anak satu de ke pasar, baru de ke mas yang jualan mainan anak." },
             { type: "dialogue", speaker: "Anak", content: "Om ada wortel kah?" },
@@ -191,61 +191,6 @@ export const mops = [
             { type: "dialogue", speaker: "Om", content: "Trada juga ade." },
             { type: "dialogue", speaker: "Anak", content: "Ooh kalo begitu ada wortel k Om?" },
             { type: "narration", content: "🤣🤣🤣" },
-        ],
-    },
-    {
-        id: "muntah-di-pesawat",
-        title: "Muntah di Pesawat",
-        date: "5 Juni 2025",
-        content: [
-            { type: "narration", content: "Yaklep de naik pesawat terus de ketemu orang Jawa satu nama Juna." },
-            { type: "narration", content: "Jadi orang Jawa ini de kaya jadi de cerita-cerita dengan Yaklep." },
-            { type: "dialogue", speaker: "Mas", content: "Mas sebelum naik pesawat mas makan apa?" },
-            { type: "narration", content: "Yaklep gengsi jadi de jawab." },
-            { type: "dialogue", speaker: "Yaklep", content: "Ah mas sa makan udang dengan ayam bakar." },
-            { type: "dialogue", speaker: "Mas", content: "Wahh enak yah mas, lah saya cuman makan daging sapi." },
-            {
-                type: "narration",
-                content:
-                    "Seketika pesawat tergoncang dan Yaklep yang baru pertama kali naik pesawat ini de muntah. Yang keluar ternyata daun kasbi dengan daun pepaya.",
-            },
-            {
-                type: "dialogue",
-                speaker: "Mas",
-                content: "Lah mas ko yang keluar sayuran, katanya makan udang dengan ayam bakar 😅",
-            },
-            {
-                type: "dialogue",
-                speaker: "Yaklep",
-                content: "Ah mas itu makanan dari minggu kemarin punya..",
-            },
-            { type: "narration", content: "🤣🤣🤣" },
-        ],
-    },
-    {
-        id: "kebutuhan-kecil",
-        title: "Kebutuhan Kecil",
-        date: "4 Juni 2025",
-        content: [
-            { type: "narration", content: "Nene ajak tete ke kamar." },
-            { type: "narration", content: "Nene rayu-rayu tete tapi macam tete pamalas ka.." },
-            { type: "dialogue", speaker: "Nene", content: "Bah tete,, bikin dulu,, macam su lama k" },
-            { type: "dialogue", speaker: "Tete", content: "Ehh... tersera ko suda,," },
-            {
-                type: "narration",
-                content: "(Nene kutik-kutik tapi macam barang de tidak mau naik, pengaruh usia to)",
-            },
-            {
-                type: "narration",
-                content: "Nene toki di kepala baru de bilang:",
-            },
-            {
-                type: "dialogue",
-                speaker: "Nene",
-                content:
-                    '"Feeh... semua harga kebutuhan pokok naik,,, cuma kebutuhan kecil ini saja yang tida pernah naik...😑😑😑"',
-            },
-            { type: "narration", content: "🤣🤣🤣🤣" },
         ],
     },
     {
