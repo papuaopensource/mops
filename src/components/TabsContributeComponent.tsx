@@ -30,10 +30,25 @@ const ExternalLink: React.FC<ExternalLinkProps> = ({
 const ContributeTabs: React.FC = () => {
   return (
     <Tabs defaultValue="kirim-mop" className="w-full">
-      <TabsList className="w-full grid grid-cols-3 mb-5 bg-gray-100 p-1 rounded h-12">
-        <TabsTrigger value="kirim-mop" className="data-[state=active]:bg-white rounded-md py-2">Kirim Mop</TabsTrigger>
-        <TabsTrigger value="bantu-website" className="data-[state=active]:bg-white rounded-md py-2">Bantu Website</TabsTrigger>
-        <TabsTrigger value="sebarkan" className="data-[state=active]:bg-white rounded-md py-2">Sebarkan</TabsTrigger>
+      <TabsList className="w-full grid grid-cols-3 mb-5 bg-gray-100 dark:bg-gray-800 p-1 rounded h-12">
+        <TabsTrigger
+          value="kirim-mop"
+          className="data-[state=active]:bg-white dark:data-[state=active]:bg-gray-900 rounded-md py-2 transition-colors"
+        >
+          Kirim Mop
+        </TabsTrigger>
+        <TabsTrigger
+          value="bantu-website"
+          className="data-[state=active]:bg-white dark:data-[state=active]:bg-gray-900 rounded-md py-2 transition-colors"
+        >
+          Bantu Website
+        </TabsTrigger>
+        <TabsTrigger
+          value="sebarkan"
+          className="data-[state=active]:bg-white dark:data-[state=active]:bg-gray-900 rounded-md py-2 transition-colors"
+        >
+          Sebarkan
+        </TabsTrigger>
       </TabsList>
 
       {/* Kirim Mop Section */}
@@ -101,14 +116,16 @@ const ContributeTabs: React.FC = () => {
                 </li>
                 <li>Unggah file tersebut melalui Google Form</li>
               </ol>
-              <div className="flex justify-center">
+                <div className="flex justify-center">
                 <ExternalLink href="https://forms.gle/hB9peLVjARqvPuEJ7">
-                  <Button className="gap-2 cursor-pointer">
-                    <FileText className="h-4 w-4" />
-                    Kirim Mop Anda di sini
+                  <Button 
+                  className="gap-2 cursor-pointer bg-white text-gray-900 dark:bg-gray-900 dark:text-white border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                  >
+                  <FileText className="h-4 w-4" />
+                  Kirim Mop Anda di sini
                   </Button>
                 </ExternalLink>
-              </div>
+                </div>
               <p className="text-sm text-muted-foreground mt-4 text-center">
                 Mop yang dikirimkan akan kami periksa terlebih dahulu sebelum
                 dipublikasikan di situs.
