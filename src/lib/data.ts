@@ -2,7 +2,7 @@ export const mops = [
     {
         id: "vokal-grup",
         title: "Vocal Grup",
-        date: "8 Juni 2025",
+        date: "5 Februari 2026",
         content: [
             {
                 type: "narration",
@@ -47,7 +47,7 @@ export const mops = [
     {
         id: "topi-baru",
         title: "Topi Baru",
-        date: "7 Juni 2025",
+        date: "4 Februari 2026",
         content: [
             {
                 type: "narration",
@@ -91,7 +91,7 @@ export const mops = [
     {
         id: "cuci-rinso",
         title: "Cuci Pakai Rinso",
-        date: "6 Juni 2025",
+        date: "3 Februari 2026",
         content: [
             {
                 type: "narration",
@@ -131,7 +131,7 @@ export const mops = [
     {
         id: "di-tegur-guru",
         title: "Di Tegur Guru",
-        date: "5 Juni 2025",
+        date: "2 Februari 2026",
         content: [
             {
                 type: "narration",
@@ -171,7 +171,7 @@ export const mops = [
     {
         id: "tanya-banyak",
         title: "Tanya Banyak",
-        date: "4 Juni 2025",
+        date: "1 Februari 2026",
         content: [
             { type: "narration", content: "Anak satu de ke pasar, baru de ke mas yang jualan mainan anak." },
             { type: "dialogue", speaker: "Anak", content: "Om ada wortel kah?" },
@@ -196,7 +196,7 @@ export const mops = [
     {
         id: "bawa-kolekte",
         title: "Bawa Kolekte",
-        date: "3 Juni 2025",
+        date: "31 Januari 2026",
         content: [
             { type: "narration", content: "Satu kali ada ibadah pas mau kumpul persembahan pendeta panggil ibu yakomina" },
             { type: "dialogue", speaker: "Pendeta", content: "Bu Yakomina, tolong bawakan kolekte" },
@@ -217,7 +217,7 @@ export const mops = [
     {
         id: "pace-hp-baru",
         title: "Pace dan Handphone Baru",
-        date: "2 Juni 2025",
+        date: "30 Januari 2026",
         content: [
             {
                 type: "narration",
@@ -255,7 +255,7 @@ export const mops = [
     {
         id: "mace-ojek-online",
         title: "Mace dan Ojek Online",
-        date: "1 Juni 2025",
+        date: "29 Januari 2026",
         content: [
             {
                 type: "narration",
@@ -289,7 +289,7 @@ export const mops = [
     {
         id: "belajar-bahasa-inggris",
         title: "Belajar Bahasa Inggris",
-        date: "31 Mei 2025",
+        date: "28 Januari 2026",
         content: [
             {
                 type: "narration",
@@ -326,7 +326,7 @@ export const mops = [
     {
         id: "pace-eskalator",
         title: "Pace dan Eskalator",
-        date: "30 Mei 2025",
+        date: "27 Januari 2026",
         content: [
             {
                 type: "narration",
@@ -371,7 +371,7 @@ export const mops = [
     {
         id: "mace-restoran",
         title: "Mace di Restoran Cepat Saji",
-        date: "29 Mei 2025",
+        date: "26 Januari 2026",
         content: [
             {
                 type: "narration",
@@ -420,7 +420,7 @@ export const mops = [
     {
         id: "anak-nakal",
         title: "Anak Nakal",
-        date: "28 Mei 2025",
+        date: "25 Januari 2026",
         content: [
             {
                 type: "narration",
@@ -475,7 +475,7 @@ export const mops = [
     {
         id: "tes-mata",
         title: "Tes Mata",
-        date: "27 Mei 2025",
+        date: "24 Januari 2026",
         content: [
             {
                 type: "narration",
@@ -542,7 +542,7 @@ export const mops = [
     {
         id: "ikan-asin",
         title: "Ikan Asin",
-        date: "26 Mei 2025",
+        date: "23 Januari 2026",
         content: [
             {
                 type: "narration",
@@ -608,7 +608,7 @@ export const mops = [
     {
         id: "salah-paham",
         title: "Salah Paham",
-        date: "25 Mei 2025",
+        date: "22 Januari 2026",
         content: [
             {
                 type: "narration",
@@ -684,7 +684,7 @@ export const mops = [
     {
         id: "salah-kirim",
         title: "Salah Kirim",
-        date: "24 Mei 2025",
+        date: "21 Januari 2026",
         content: [
             {
                 type: "narration",
@@ -736,7 +736,7 @@ export const mops = [
     {
         id: "anak-pintar",
         title: "Anak Pintar",
-        date: "23 Mei 2025",
+        date: "20 Januari 2026",
         content: [
             {
                 type: "narration",
