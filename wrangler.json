@@ -1,0 +1,11 @@
+{
+	"name": "mops",
+	"compatibility_date": "2025-01-01",
+	"kv_namespaces": [
+		{
+			"binding": "REACTIONS",
+			"id": "e704da8251fc4e34bbab0cfb34cc58e9",
+			"remote": true
+		}
+	]
+}
