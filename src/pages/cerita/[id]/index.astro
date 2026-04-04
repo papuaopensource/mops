@@ -31,12 +31,13 @@ const pageUrl = Astro.url.href;
 
 <Layout
   title={mop?.title}
-  description={snippet || "Baca cerita Mop Papua yang menghibur dan unik. Temukan kisah lucu dan menarik dari Papua."}
+  description={snippet ||
+    "Baca cerita Mop Papua yang menghibur dan unik. Temukan kisah lucu dan menarik dari Papua."}
 >
   <main class="mx-auto max-w-2xl px-4 py-12">
     <div class="mb-8 text-center">
       <h1 class="mb-6 text-3xl font-bold">{mop?.title}</h1>
-      <p class="text-sm text-muted-foreground">{mop?.date}</p>
+      <p class="text-muted-foreground text-sm">{mop?.date}</p>
     </div>
 
     <div class="space-y-6">

@@ -7,6 +7,7 @@ Proyek ini diinisiasi oleh **Komunitas Papua Open Source**, yang berkomitmen ber
 ## Tech Stack
 
 Mops dibangun menggunakan:
+
 - **Astro**: Framework untuk website cepat dan efisien.
 - **React**: Library JavaScript untuk membangun komponen UI interaktif.
 - **TailwindCSS**: CSS framework untuk desain responsif.
@@ -24,6 +25,7 @@ Proyek ini dilisensikan di bawah [MIT License](LICENSE).
 ## Cara Berkontribusi
 
 Kami menyambut kontribusi! Untuk berkontribusi:
+
 1. Fork repositori ini.
 2. Buat branch baru (`git checkout -b fitur-anda`).
 3. Commit perubahan (`git commit -m "Menambahkan fitur X"`).

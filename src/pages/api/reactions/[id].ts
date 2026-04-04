@@ -13,7 +13,10 @@ interface ReactionCounts {
 
 const VALID_REACTIONS: ReactionKey[] = ["lucu", "bagus", "suka", "kaget"];
 
-async function getCounts(kv: KVNamespace, mopId: string): Promise<ReactionCounts> {
+async function getCounts(
+  kv: KVNamespace,
+  mopId: string
+): Promise<ReactionCounts> {
   const raw = await kv.get(`reaction:${mopId}`);
   if (raw) {
     try {
@@ -28,9 +31,12 @@ export const GET: APIRoute = async ({ params, locals }) => {
   const kv = locals.runtime?.env?.REACTIONS;
 
   if (!kv) {
-    return new Response(JSON.stringify({ lucu: 0, bagus: 0, suka: 0, kaget: 0 }), {
-      headers: { "Content-Type": "application/json" },
-    });
+    return new Response(
+      JSON.stringify({ lucu: 0, bagus: 0, suka: 0, kaget: 0 }),
+      {
+        headers: { "Content-Type": "application/json" },
+      }
+    );
   }
 
   const counts = await getCounts(kv, id!);

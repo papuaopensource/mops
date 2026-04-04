@@ -8,12 +8,18 @@ interface ShareButtonsProps {
   snippet?: string;
 }
 
-export default function ShareButtons({ title, url, snippet }: ShareButtonsProps) {
+export default function ShareButtons({
+  title,
+  url,
+  snippet,
+}: ShareButtonsProps) {
   const [copied, setCopied] = useState(false);
 
   const encodedUrl = encodeURIComponent(url);
   const encodedText = encodeURIComponent(`${title} — Mop Papua\n${url}`);
-  const tweetText = encodeURIComponent(`${title} — Mop Papua #MopPapua\n${url}`);
+  const tweetText = encodeURIComponent(
+    `${title} — Mop Papua #MopPapua\n${url}`
+  );
 
   const shareLinks = {
     facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
@@ -45,7 +51,7 @@ export default function ShareButtons({ title, url, snippet }: ShareButtonsProps)
 
   return (
     <div className="flex flex-wrap items-center gap-2">
-      <span className="flex items-center gap-1 text-sm text-muted-foreground">
+      <span className="text-muted-foreground flex items-center gap-1 text-sm">
         <Share2 className="h-4 w-4" />
         Bagikan:
       </span>
@@ -88,7 +94,20 @@ export default function ShareButtons({ title, url, snippet }: ShareButtonsProps)
         className="flex items-center gap-1.5"
         aria-label="Bagikan ke X"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m4 4l11.733 16H20L8.267 4zm0 16l6.768-6.768m2.46-2.46L20 4"/></svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-4 w-4"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="none"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="m4 4l11.733 16H20L8.267 4zm0 16l6.768-6.768m2.46-2.46L20 4"
+          />
+        </svg>
         X
       </Button>
 

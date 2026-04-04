@@ -1,25 +1,25 @@
-import { type ClassValue, clsx } from "clsx"
-import { twMerge } from "tailwind-merge"
+import { type ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
 }
 
 // Fungsi untuk mengubah string tanggal menjadi objek Date dengan zona waktu lokal
 export function parseDate(dateString: string) {
-  const parts = dateString.split(" ")
+  const parts = dateString.split(" ");
   if (parts.length >= 3) {
-    const day = Number.parseInt(parts[0])
-    const month = getMonthNumber(parts[1])
-    const year = Number.parseInt(parts[2])
+    const day = Number.parseInt(parts[0]);
+    const month = getMonthNumber(parts[1]);
+    const year = Number.parseInt(parts[2]);
 
     // Buat tanggal dengan zona waktu lokal
     // Perhatikan: Ini menggunakan zona waktu klien secara otomatis
-    return new Date(year, month, day)
+    return new Date(year, month, day);
   }
 
   // Fallback ke tanggal saat ini dalam zona waktu lokal
-  return new Date()
+  return new Date();
 }
 
 // Fungsi untuk mendapatkan nomor bulan dari nama bulan
@@ -37,35 +37,35 @@ function getMonthNumber(monthName: string) {
     Oktober: 9,
     November: 10,
     Desember: 11,
-  }
-  return months[monthName] || 0
+  };
+  return months[monthName] || 0;
 }
 
 // Fungsi untuk memfilter mops berdasarkan tanggal saat ini
 export function filterMopsByDate(mops: any[]) {
-  const today = new Date()
-  today.setHours(0, 0, 0, 0) // Reset waktu ke 00:00:00
+  const today = new Date();
+  today.setHours(0, 0, 0, 0); // Reset waktu ke 00:00:00
 
   return mops.filter((mop) => {
-    const mopDate = parseDate(mop.date)
-    return mopDate <= today
-  })
+    const mopDate = parseDate(mop.date);
+    return mopDate <= today;
+  });
 }
 
 // Fungsi untuk mendapatkan mop hari ini
 export function getTodayMop(mops: any[]) {
-  const availableMops = filterMopsByDate(mops)
+  const availableMops = filterMopsByDate(mops);
 
-  if (availableMops.length === 0) return null
+  if (availableMops.length === 0) return null;
 
   // Urutkan mops berdasarkan tanggal (terbaru dulu)
   const sortedMops = [...availableMops].sort((a, b) => {
-    const dateA = parseDate(a.date)
-    const dateB = parseDate(b.date)
-    return dateB.getTime() - dateA.getTime()
-  })
+    const dateA = parseDate(a.date);
+    const dateB = parseDate(b.date);
+    return dateB.getTime() - dateA.getTime();
+  });
 
-  return sortedMops[0] // Ambil mop dengan tanggal terbaru
+  return sortedMops[0]; // Ambil mop dengan tanggal terbaru
 }
 
 // Fungsi untuk membuat slug dari judul
@@ -78,5 +78,5 @@ export function slugify(text: string) {
     .replace(/--+/g, "-") // Ganti multiple hyphens dengan satu hyphen
     .replace(/^-+/, "") // Trim tanda hubung dari awal
     .replace(/-+$/, "") // Trim tanda hubung dari akhir
-    .slice(0, 50) // Batasi panjang slug
+    .slice(0, 50); // Batasi panjang slug
 }
