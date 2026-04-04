@@ -30,22 +30,22 @@ const ExternalLink: React.FC<ExternalLinkProps> = ({
 const ContributeTabs: React.FC = () => {
   return (
     <Tabs defaultValue="kirim-mop" className="w-full">
-      <TabsList className="mb-5 grid h-12 w-full grid-cols-3 rounded bg-gray-100 p-1 dark:bg-gray-800">
+      <TabsList className="mb-5 grid h-12 w-full grid-cols-3 rounded bg-gray-100 p-1">
         <TabsTrigger
           value="kirim-mop"
-          className="rounded-md py-2 transition-colors data-[state=active]:bg-white dark:data-[state=active]:bg-gray-900"
+          className="rounded-md py-2 transition-colors data-[state=active]:bg-white"
         >
           Kirim Mop
         </TabsTrigger>
         <TabsTrigger
           value="bantu-website"
-          className="rounded-md py-2 transition-colors data-[state=active]:bg-white dark:data-[state=active]:bg-gray-900"
+          className="rounded-md py-2 transition-colors data-[state=active]:bg-white"
         >
           Bantu Website
         </TabsTrigger>
         <TabsTrigger
           value="sebarkan"
-          className="rounded-md py-2 transition-colors data-[state=active]:bg-white dark:data-[state=active]:bg-gray-900"
+          className="rounded-md py-2 transition-colors data-[state=active]:bg-white"
         >
           Sebarkan
         </TabsTrigger>
@@ -121,7 +121,7 @@ const ContributeTabs: React.FC = () => {
               </ol>
               <div className="flex justify-center">
                 <ExternalLink href="https://forms.gle/hB9peLVjARqvPuEJ7">
-                  <Button className="cursor-pointer gap-2 border border-gray-300 bg-white text-gray-900 transition-colors hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-900 dark:text-white dark:hover:bg-gray-800">
+                  <Button className="cursor-pointer gap-2 border border-gray-300 bg-white text-gray-900 transition-colors hover:bg-gray-100">
                     <FileText className="h-4 w-4" />
                     Kirim Mop Anda di sini
                   </Button>

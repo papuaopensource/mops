@@ -172,7 +172,7 @@ export default function CeritaPageComponent({
         <div className="flex gap-2">
           {/* Search input */}
           <div className="relative flex-1">
-            <Search className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-gray-500 dark:text-gray-400" />
+            <Search className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-gray-500" />
             <Input
               type="text"
               placeholder="Cari cerita..."
@@ -183,7 +183,7 @@ export default function CeritaPageComponent({
             {searchTerm && (
               <button
                 onClick={handleResetSearch}
-                className="absolute top-1/2 right-3 -translate-y-1/2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+                className="absolute top-1/2 right-3 -translate-y-1/2 text-gray-500 hover:text-gray-700"
               >
                 <X className="h-4 w-4" />
               </button>
@@ -208,7 +208,7 @@ export default function CeritaPageComponent({
         </div>
 
         {/* Results info */}
-        <div className="text-sm text-gray-500 dark:text-gray-400">
+        <div className="text-sm text-gray-500">
           {filteredMops.length === 0
             ? "Tidak ada cerita yang ditemukan"
             : `Menampilkan ${Math.min(visibleCount, totalMops)} dari ${totalMops} cerita`}
@@ -219,11 +219,11 @@ export default function CeritaPageComponent({
         <div className="space-y-8">
           {visibleMops.map((group) => (
             <div key={group.month} className="space-y-4">
-              <h2 className="text-lg font-medium text-gray-500 dark:text-gray-400">
+              <h2 className="text-lg font-medium text-gray-500">
                 {group.month}
               </h2>
 
-              <div className="space-y-4 border-l-2 border-gray-200 pl-4 dark:border-gray-700">
+              <div className="space-y-4 border-l-2 border-gray-200 pl-4">
                 {group.mops.map((mop: any) => (
                   <div key={mop.id} className="border-b pb-4">
                     <a href={`/cerita/${mop.id}/`} className="group block">
@@ -233,7 +233,7 @@ export default function CeritaPageComponent({
                       <p className="text-muted-foreground mb-2 text-sm">
                         {mop.date}
                       </p>
-                      <p className="line-clamp-2 text-gray-600 dark:text-gray-400">
+                      <p className="line-clamp-2 text-gray-600">
                         {mop.content[0]?.content || ""}
                       </p>
                     </a>
@@ -245,7 +245,7 @@ export default function CeritaPageComponent({
         </div>
       ) : (
         <div className="rounded-lg border border-dashed p-8 text-center">
-          <p className="text-gray-500 dark:text-gray-400">
+          <p className="text-gray-500">
             Tidak ada cerita yang sesuai dengan kriteria pencarian Anda.
           </p>
           <Button
