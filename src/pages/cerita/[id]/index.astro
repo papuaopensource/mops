@@ -1,10 +1,11 @@
 ---
 import { mops } from "@/lib/data";
 import { parseDate } from "@/lib/utils";
-import { Button } from "@/components/ui/button.tsx";
+import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Layout from "@/layouts/Layout.astro";
 import Link from "@/components/Link.astro";
+import ShareButtons from "@/components/ShareButtons";
 
 export const prerender = false;
 
@@ -22,11 +23,14 @@ today.setHours(0, 0, 0, 0);
 if (mopDate > today) {
   return Astro.redirect("/404/");
 }
+
+const snippet = mop.content[0]?.content ?? "";
+const pageUrl = Astro.url.href;
 ---
 
 <Layout
   title={mop?.title}
-  description="Baca cerita Mop Papua yang menghibur dan unik. Temukan kisah lucu dan menarik dari Papua."
+  description={snippet || "Baca cerita Mop Papua yang menghibur dan unik. Temukan kisah lucu dan menarik dari Papua."}
 >
   <main class="mx-auto max-w-2xl px-4 py-12">
     <div class="mb-8 text-center">
@@ -55,7 +59,16 @@ if (mopDate > today) {
       }
     </div>
 
-    <div class="mt-12 flex items-center justify-end">
+    <div class="mt-10 border-t pt-6">
+      <ShareButtons
+        client:load
+        title={mop.title}
+        url={pageUrl}
+        snippet={snippet}
+      />
+    </div>
+
+    <div class="mt-8 flex items-center justify-end">
       <Button variant="outline">
         <Link href="/cerita/" class="flex items-center gap-2">
           Baca yang Lain
