@@ -41,8 +41,15 @@ function setUserReaction(mopId: string, reaction: ReactionKey | null) {
 }
 
 export default function ReactionButtons({ mopId }: ReactionButtonsProps) {
-  const [counts, setCounts] = useState<ReactionCounts>({ lucu: 0, bagus: 0, suka: 0, kaget: 0 });
-  const [userReaction, setUserReactionState] = useState<ReactionKey | null>(null);
+  const [counts, setCounts] = useState<ReactionCounts>({
+    lucu: 0,
+    bagus: 0,
+    suka: 0,
+    kaget: 0,
+  });
+  const [userReaction, setUserReactionState] = useState<ReactionKey | null>(
+    null
+  );
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
 
@@ -109,7 +116,7 @@ export default function ReactionButtons({ mopId }: ReactionButtonsProps) {
 
   return (
     <div className="space-y-2">
-      <p className="text-sm font-medium text-muted-foreground">Reaksi kamu:</p>
+      <p className="text-muted-foreground text-sm font-medium">Reaksi kamu:</p>
       <div className="flex flex-wrap gap-2">
         {REACTIONS.map(({ key, emoji, label }) => {
           const active = userReaction === key;

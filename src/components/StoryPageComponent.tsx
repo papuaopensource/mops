@@ -3,7 +3,13 @@ import { useState, useEffect, useMemo } from "react";
 import { ChevronRight, Search, X, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { parseDate } from "@/lib/utils";
 
 // Fungsi untuk mendapatkan bulan dan tahun dari string tanggal
@@ -28,7 +34,7 @@ function groupMopsByMonth(mops: any[]) {
   });
 
   // Urutkan berdasarkan tanggal (terbaru dulu)
-  Object.keys(grouped).forEach(key => {
+  Object.keys(grouped).forEach((key) => {
     grouped[key].sort((a, b) => {
       const dateA = parseDate(a.date);
       const dateB = parseDate(b.date);
@@ -44,7 +50,10 @@ interface CeritaPageComponentProps {
   allMonths: string[];
 }
 
-export default function CeritaPageComponent({ availableMops, allMonths }: CeritaPageComponentProps) {
+export default function CeritaPageComponent({
+  availableMops,
+  allMonths,
+}: CeritaPageComponentProps) {
   const [visibleCount, setVisibleCount] = useState(5);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedMonth, setSelectedMonth] = useState("all");
@@ -59,7 +68,10 @@ export default function CeritaPageComponent({ availableMops, allMonths }: Cerita
       result = result.filter(
         (mop) =>
           mop.title.toLowerCase().includes(searchLower) ||
-          mop.content.some((item: any) => item.content && item.content.toLowerCase().includes(searchLower)),
+          mop.content.some(
+            (item: any) =>
+              item.content && item.content.toLowerCase().includes(searchLower)
+          )
       );
     }
 
@@ -72,26 +84,39 @@ export default function CeritaPageComponent({ availableMops, allMonths }: Cerita
   }, [searchTerm, selectedMonth, availableMops]);
 
   // Mengelompokkan mops berdasarkan bulan
-  const groupedMops = useMemo(() => groupMopsByMonth(filteredMops), [filteredMops]);
-  
+  const groupedMops = useMemo(
+    () => groupMopsByMonth(filteredMops),
+    [filteredMops]
+  );
+
   // Mengurutkan group bulan dari yang terbaru
   const monthGroups = useMemo(() => {
     return Object.keys(groupedMops).sort((a, b) => {
       // Mengonversi "Bulan Tahun" menjadi objek Date untuk perbandingan
       const [monthA, yearA] = a.split(" ");
       const [monthB, yearB] = b.split(" ");
-      
+
       // Membandingkan tahun terlebih dahulu
       if (yearA !== yearB) {
         return parseInt(yearB) - parseInt(yearA);
       }
-      
+
       // Jika tahun sama, bandingkan bulan
       const monthsOrder: Record<string, number> = {
-        Januari: 0, Februari: 1, Maret: 2, April: 3, Mei: 4, Juni: 5,
-        Juli: 6, Agustus: 7, September: 8, Oktober: 9, November: 10, Desember: 11
+        Januari: 0,
+        Februari: 1,
+        Maret: 2,
+        April: 3,
+        Mei: 4,
+        Juni: 5,
+        Juli: 6,
+        Agustus: 7,
+        September: 8,
+        Oktober: 9,
+        November: 10,
+        Desember: 11,
       };
-      
+
       return monthsOrder[monthB] - monthsOrder[monthA];
     });
   }, [groupedMops]);
@@ -103,7 +128,10 @@ export default function CeritaPageComponent({ availableMops, allMonths }: Cerita
 
     for (const month of monthGroups) {
       const monthMops = groupedMops[month];
-      const mopsToTake = Math.min(monthMops.length, Math.max(0, visibleCount - totalMopsToShow));
+      const mopsToTake = Math.min(
+        monthMops.length,
+        Math.max(0, visibleCount - totalMopsToShow)
+      );
 
       if (mopsToTake > 0) {
         result.push({
@@ -144,18 +172,18 @@ export default function CeritaPageComponent({ availableMops, allMonths }: Cerita
         <div className="flex gap-2">
           {/* Search input */}
           <div className="relative flex-1">
-            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500 dark:text-gray-400" />
+            <Search className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-gray-500 dark:text-gray-400" />
             <Input
               type="text"
               placeholder="Cari cerita..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-10 pr-10"
+              className="pr-10 pl-10"
             />
             {searchTerm && (
               <button
                 onClick={handleResetSearch}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+                className="absolute top-1/2 right-3 -translate-y-1/2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
               >
                 <X className="h-4 w-4" />
               </button>
@@ -191,15 +219,23 @@ export default function CeritaPageComponent({ availableMops, allMonths }: Cerita
         <div className="space-y-8">
           {visibleMops.map((group) => (
             <div key={group.month} className="space-y-4">
-              <h2 className="text-lg font-medium text-gray-500 dark:text-gray-400">{group.month}</h2>
+              <h2 className="text-lg font-medium text-gray-500 dark:text-gray-400">
+                {group.month}
+              </h2>
 
-              <div className="space-y-4 border-l-2 border-gray-200 dark:border-gray-700 pl-4">
+              <div className="space-y-4 border-l-2 border-gray-200 pl-4 dark:border-gray-700">
                 {group.mops.map((mop: any) => (
                   <div key={mop.id} className="border-b pb-4">
                     <a href={`/cerita/${mop.id}/`} className="group block">
-                      <h3 className="mb-1 text-lg font-medium group-hover:text-blue-600">{mop.title}</h3>
-                      <p className="mb-2 text-sm text-muted-foreground">{mop.date}</p>
-                      <p className="line-clamp-2 text-gray-600 dark:text-gray-400">{mop.content[0]?.content || ""}</p>
+                      <h3 className="mb-1 text-lg font-medium group-hover:text-blue-600">
+                        {mop.title}
+                      </h3>
+                      <p className="text-muted-foreground mb-2 text-sm">
+                        {mop.date}
+                      </p>
+                      <p className="line-clamp-2 text-gray-600 dark:text-gray-400">
+                        {mop.content[0]?.content || ""}
+                      </p>
                     </a>
                   </div>
                 ))}
@@ -227,7 +263,11 @@ export default function CeritaPageComponent({ availableMops, allMonths }: Cerita
 
       {visibleCount < totalMops && (
         <div className="mt-8 flex justify-center">
-          <Button variant="outline" onClick={handleLoadMore} className="flex items-center gap-2">
+          <Button
+            variant="outline"
+            onClick={handleLoadMore}
+            className="flex items-center gap-2"
+          >
             Muat Lebih Banyak
             <ChevronRight className="h-4 w-4" />
           </Button>

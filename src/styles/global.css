@@ -1,8 +1,8 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 @import "tw-animate-css";
 
 body {
-  font-family: 'Inter Variable', sans-serif;
+  font-family: "Inter Variable", sans-serif;
 }
 
 @custom-variant dark (&:is(.dark *));

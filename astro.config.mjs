@@ -1,23 +1,25 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
-import tailwindcss from '@tailwindcss/vite';
-import react from '@astrojs/react';
-import cloudflare from '@astrojs/cloudflare';
-import { fileURLToPath } from 'node:url';
+import { defineConfig } from "astro/config";
+import tailwindcss from "@tailwindcss/vite";
+import react from "@astrojs/react";
+import cloudflare from "@astrojs/cloudflare";
+import { fileURLToPath } from "node:url";
 
 export default defineConfig({
-  site: 'https://mops.web.id',
-  trailingSlash: 'always',
-  output: 'server',
+  site: "https://mops.web.id",
+  trailingSlash: "always",
+  output: "server",
 
   vite: {
     plugins: [tailwindcss()],
     resolve: {
       alias: {
-        '@': fileURLToPath(new URL('./src', import.meta.url)),
-        ...(process.env.NODE_ENV === 'production' ? {
-          'react-dom/server': 'react-dom/server.edge',
-        } : {})
+        "@": fileURLToPath(new URL("./src", import.meta.url)),
+        ...(process.env.NODE_ENV === "production"
+          ? {
+              "react-dom/server": "react-dom/server.edge",
+            }
+          : {}),
       },
     },
   },
