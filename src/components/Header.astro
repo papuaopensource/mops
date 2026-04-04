@@ -19,61 +19,61 @@ const isActive = (path: string) => {
       <nav class="flex space-x-6">
         <Link
           href="/"
-          class={`relative py-1 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50 ${
+          class={`relative py-1 text-gray-600 hover:text-gray-900 ${
             isActive("/") && pathname === "/"
-              ? "font-medium text-gray-900 dark:text-gray-50"
+              ? "font-medium text-gray-900"
               : ""
           }`}
         >
           teras
           {
             isActive("/") && pathname === "/" && (
-              <span class="absolute bottom-0 left-0 h-0.5 w-full bg-gray-900 dark:bg-gray-50" />
+              <span class="absolute bottom-0 left-0 h-0.5 w-full bg-gray-900" />
             )
           }
         </Link>
         <Link
           href="/cerita/"
-          class={`relative py-1 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50 ${
+          class={`relative py-1 text-gray-600 hover:text-gray-900 ${
             isActive("/cerita/")
-              ? "font-medium text-gray-900 dark:text-gray-50"
+              ? "font-medium text-gray-900"
               : ""
           }`}
         >
           cerita
           {
             isActive("/cerita/") && (
-              <span class="absolute bottom-0 left-0 h-0.5 w-full bg-gray-900 dark:bg-gray-50" />
+              <span class="absolute bottom-0 left-0 h-0.5 w-full bg-gray-900" />
             )
           }
         </Link>
         <Link
           href="/tentang/"
-          class={`relative py-1 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50 ${
+          class={`relative py-1 text-gray-600 hover:text-gray-900 ${
             isActive("/tentang/")
-              ? "font-medium text-gray-900 dark:text-gray-50"
+              ? "font-medium text-gray-900"
               : ""
           }`}
         >
           tentang
           {
             isActive("/tentang/") && (
-              <span class="absolute bottom-0 left-0 h-0.5 w-full bg-gray-900 dark:bg-gray-50" />
+              <span class="absolute bottom-0 left-0 h-0.5 w-full bg-gray-900" />
             )
           }
         </Link>
         <Link
           href="/kontribusi/"
-          class={`relative py-1 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50 ${
+          class={`relative py-1 text-gray-600 hover:text-gray-900 ${
             isActive("/kontribusi/")
-              ? "font-medium text-gray-900 dark:text-gray-50"
+              ? "font-medium text-gray-900"
               : ""
           }`}
         >
           kontribusi
           {
             isActive("/kontribusi/") && (
-              <span class="absolute bottom-0 left-0 h-0.5 w-full bg-gray-900 dark:bg-gray-50" />
+              <span class="absolute bottom-0 left-0 h-0.5 w-full bg-gray-900" />
             )
           }
         </Link>
