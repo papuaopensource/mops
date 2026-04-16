@@ -1,6 +1,6 @@
-// CeritaPageComponent.tsx
+// StoryPageComponent.tsx
 import { useState, useEffect, useMemo } from "react";
-import { ChevronRight, Search, X, Calendar } from "lucide-react";
+import { ChevronRight, Search, X, Calendar, Tag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -11,6 +11,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { parseDate } from "@/lib/utils";
+import type { Mop } from "@/lib/data";
 
 // Fungsi untuk mendapatkan bulan dan tahun dari string tanggal
 function getMonthYear(dateString: string) {
@@ -22,8 +23,8 @@ function getMonthYear(dateString: string) {
 }
 
 // Fungsi untuk mengelompokkan mops berdasarkan bulan
-function groupMopsByMonth(mops: any[]) {
-  const grouped: Record<string, any[]> = {};
+function groupMopsByMonth(mops: Mop[]) {
+  const grouped: Record<string, Mop[]> = {};
 
   mops.forEach((mop) => {
     const monthYear = getMonthYear(mop.date);
@@ -46,7 +47,7 @@ function groupMopsByMonth(mops: any[]) {
 }
 
 interface CeritaPageComponentProps {
-  availableMops: any[];
+  availableMops: Mop[];
   allMonths: string[];
 }
 
@@ -57,8 +58,18 @@ export default function CeritaPageComponent({
   const [visibleCount, setVisibleCount] = useState(5);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedMonth, setSelectedMonth] = useState("all");
+  const [selectedTag, setSelectedTag] = useState("all");
 
-  // Filter mops berdasarkan pencarian dan bulan yang dipilih
+  // Mendapatkan semua tag unik dari data mops yang tersedia
+  const allTags = useMemo(() => {
+    const tags = new Set<string>();
+    availableMops.forEach((mop) => {
+      mop.tags?.forEach((tag) => tags.add(tag));
+    });
+    return Array.from(tags).sort();
+  }, [availableMops]);
+
+  // Filter mops berdasarkan pencarian, bulan, dan tag yang dipilih
   const filteredMops = useMemo(() => {
     let result = [...availableMops];
 
@@ -69,7 +80,7 @@ export default function CeritaPageComponent({
         (mop) =>
           mop.title.toLowerCase().includes(searchLower) ||
           mop.content.some(
-            (item: any) =>
+            (item) =>
               item.content && item.content.toLowerCase().includes(searchLower)
           )
       );
@@ -80,8 +91,13 @@ export default function CeritaPageComponent({
       result = result.filter((mop) => getMonthYear(mop.date) === selectedMonth);
     }
 
+    // Filter berdasarkan tag
+    if (selectedTag !== "all") {
+      result = result.filter((mop) => mop.tags?.includes(selectedTag));
+    }
+
     return result;
-  }, [searchTerm, selectedMonth, availableMops]);
+  }, [searchTerm, selectedMonth, selectedTag, availableMops]);
 
   // Mengelompokkan mops berdasarkan bulan
   const groupedMops = useMemo(
@@ -124,7 +140,7 @@ export default function CeritaPageComponent({
   // Menghitung mops yang akan ditampilkan berdasarkan visibleCount
   const visibleMops = useMemo(() => {
     let totalMopsToShow = 0;
-    const result: any[] = [];
+    const result: { month: string; mops: Mop[] }[] = [];
 
     for (const month of monthGroups) {
       const monthMops = groupedMops[month];
@@ -150,7 +166,7 @@ export default function CeritaPageComponent({
   // Reset pagination ketika filter berubah
   useEffect(() => {
     setVisibleCount(5);
-  }, [searchTerm, selectedMonth]);
+  }, [searchTerm, selectedMonth, selectedTag]);
 
   // Menghitung total mops yang tersedia
   const totalMops = filteredMops.length;
@@ -169,7 +185,7 @@ export default function CeritaPageComponent({
     <div>
       <div className="mb-8 space-y-4">
         {/* Search and filter row */}
-        <div className="flex gap-2">
+        <div className="flex flex-col gap-3 sm:flex-row">
           {/* Search input */}
           <div className="relative flex-1">
             <Search className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-gray-500 dark:text-gray-400" />
@@ -190,21 +206,39 @@ export default function CeritaPageComponent({
             )}
           </div>
 
-          {/* Month filter */}
-          <Select value={selectedMonth} onValueChange={setSelectedMonth}>
-            <SelectTrigger className="w-[180px]">
-              <Calendar className="mr-2 h-4 w-4" />
-              <SelectValue placeholder="Pilih bulan" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="all">Semua Bulan</SelectItem>
-              {allMonths.map((month) => (
-                <SelectItem key={month} value={month}>
-                  {month}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+          <div className="flex gap-2">
+            {/* Tag filter */}
+            <Select value={selectedTag} onValueChange={setSelectedTag}>
+              <SelectTrigger className="w-full sm:w-[150px]">
+                <Tag className="mr-2 h-4 w-4" />
+                <SelectValue placeholder="Pilih tag" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">Semua Tag</SelectItem>
+                {allTags.map((tag) => (
+                  <SelectItem key={tag} value={tag}>
+                    {tag.charAt(0).toUpperCase() + tag.slice(1)}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+
+            {/* Month filter */}
+            <Select value={selectedMonth} onValueChange={setSelectedMonth}>
+              <SelectTrigger className="w-full sm:w-[150px]">
+                <Calendar className="mr-2 h-4 w-4" />
+                <SelectValue placeholder="Pilih bulan" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">Semua Bulan</SelectItem>
+                {allMonths.map((month) => (
+                  <SelectItem key={month} value={month}>
+                    {month}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
         </div>
 
         {/* Results info */}
@@ -224,9 +258,19 @@ export default function CeritaPageComponent({
               </h2>
 
               <div className="space-y-4 border-l-2 border-gray-200 pl-4 dark:border-gray-700">
-                {group.mops.map((mop: any) => (
-                  <div key={mop.id} className="border-b pb-4">
+                {group.mops.map((mop) => (
+                  <div key={mop.id} className="border-b pb-4 last:border-0 last:pb-0">
                     <a href={`/cerita/${mop.id}/`} className="group block">
+                      <div className="mb-2 flex flex-wrap gap-2">
+                        {mop.tags?.map((tag) => (
+                          <span
+                            key={tag}
+                            className="bg-blue-50 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400 rounded-full px-2 py-0.5 text-xs font-medium"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
                       <h3 className="mb-1 text-lg font-medium group-hover:text-blue-600">
                         {mop.title}
                       </h3>
@@ -253,6 +297,7 @@ export default function CeritaPageComponent({
             onClick={() => {
               setSearchTerm("");
               setSelectedMonth("all");
+              setSelectedTag("all");
             }}
             className="mt-4"
           >

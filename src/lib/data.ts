@@ -1,8 +1,23 @@
-export const mops = [
+export interface Content {
+  type: "narration" | "dialogue";
+  speaker?: string;
+  content: string;
+}
+
+export interface Mop {
+  id: string;
+  title: string;
+  date: string;
+  tags: string[];
+  content: Content[];
+}
+
+export const mops: Mop[] = [
   {
     id: "vokal-grup",
     title: "Vocal Grup",
     date: "5 Februari 2026",
+    tags: ["gereja"],
     content: [
       {
         type: "narration",
@@ -49,6 +64,7 @@ export const mops = [
     id: "topi-baru",
     title: "Topi Baru",
     date: "4 Februari 2026",
+    tags: ["kampung"],
     content: [
       {
         type: "narration",
@@ -96,6 +112,7 @@ export const mops = [
     id: "cuci-rinso",
     title: "Cuci Pakai Rinso",
     date: "3 Februari 2026",
+    tags: ["keluarga"],
     content: [
       {
         type: "narration",
@@ -136,6 +153,7 @@ export const mops = [
     id: "di-tegur-guru",
     title: "Di Tegur Guru",
     date: "2 Februari 2026",
+    tags: ["sekolah"],
     content: [
       {
         type: "narration",
@@ -177,6 +195,7 @@ export const mops = [
     id: "tanya-banyak",
     title: "Tanya Banyak",
     date: "1 Februari 2026",
+    tags: ["kampung"],
     content: [
       {
         type: "narration",
@@ -214,6 +233,7 @@ export const mops = [
     id: "bawa-kolekte",
     title: "Bawa Kolekte",
     date: "31 Januari 2026",
+    tags: ["gereja"],
     content: [
       {
         type: "narration",
@@ -249,6 +269,7 @@ export const mops = [
     id: "pace-hp-baru",
     title: "Pace dan Handphone Baru",
     date: "30 Januari 2026",
+    tags: ["kampung"],
     content: [
       {
         type: "narration",
@@ -291,6 +312,7 @@ export const mops = [
     id: "mace-ojek-online",
     title: "Mace dan Ojek Online",
     date: "29 Januari 2026",
+    tags: ["kampung"],
     content: [
       {
         type: "narration",
@@ -344,6 +366,7 @@ export const mops = [
     id: "belajar-bahasa-inggris",
     title: "Belajar Bahasa Inggris",
     date: "28 Januari 2026",
+    tags: ["sekolah"],
     content: [
       {
         type: "narration",
@@ -397,6 +420,7 @@ export const mops = [
     id: "pace-eskalator",
     title: "Pace dan Eskalator",
     date: "27 Januari 2026",
+    tags: ["kampung"],
     content: [
       {
         type: "narration",
@@ -455,6 +479,7 @@ export const mops = [
     id: "mace-restoran",
     title: "Mace di Restoran Cepat Saji",
     date: "26 Januari 2026",
+    tags: ["keluarga"],
     content: [
       {
         type: "narration",
@@ -531,6 +556,7 @@ export const mops = [
     id: "anak-nakal",
     title: "Anak Nakal",
     date: "25 Januari 2026",
+    tags: ["sekolah"],
     content: [
       {
         type: "narration",
@@ -591,6 +617,7 @@ export const mops = [
     id: "tes-mata",
     title: "Tes Mata",
     date: "24 Januari 2026",
+    tags: ["kampung"],
     content: [
       {
         type: "narration",
@@ -663,6 +690,7 @@ export const mops = [
     id: "ikan-asin",
     title: "Ikan Asin",
     date: "23 Januari 2026",
+    tags: ["kampung"],
     content: [
       {
         type: "narration",
@@ -735,6 +763,7 @@ export const mops = [
     id: "salah-paham",
     title: "Salah Paham",
     date: "22 Januari 2026",
+    tags: ["kampung"],
     content: [
       {
         type: "narration",
@@ -816,6 +845,7 @@ export const mops = [
     id: "salah-kirim",
     title: "Salah Kirim",
     date: "21 Januari 2026",
+    tags: ["keluarga", "gereja"],
     content: [
       {
         type: "narration",
@@ -874,6 +904,7 @@ export const mops = [
     id: "anak-pintar",
     title: "Anak Pintar",
     date: "20 Januari 2026",
+    tags: ["sekolah"],
     content: [
       {
         type: "narration",
