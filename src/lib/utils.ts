@@ -1,5 +1,6 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
+import type { Mop } from "./data";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -42,7 +43,7 @@ function getMonthNumber(monthName: string) {
 }
 
 // Fungsi untuk memfilter mops berdasarkan tanggal saat ini
-export function filterMopsByDate(mops: any[]) {
+export function filterMopsByDate(mops: Mop[]) {
   const today = new Date();
   today.setHours(0, 0, 0, 0); // Reset waktu ke 00:00:00
 
@@ -53,7 +54,7 @@ export function filterMopsByDate(mops: any[]) {
 }
 
 // Fungsi untuk mendapatkan mop hari ini
-export function getTodayMop(mops: any[]) {
+export function getTodayMop(mops: Mop[]) {
   const availableMops = filterMopsByDate(mops);
 
   if (availableMops.length === 0) return null;

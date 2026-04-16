@@ -37,7 +37,21 @@ const pageUrl = Astro.url.href;
   <main class="mx-auto max-w-2xl px-4 py-12">
     <div class="mb-8 text-center">
       <h1 class="mb-6 text-3xl font-bold">{mop?.title}</h1>
-      <p class="text-muted-foreground text-sm">{mop?.date}</p>
+      <div class="flex flex-col items-center gap-2">
+        <p class="text-muted-foreground text-sm">{mop?.date}</p>
+        <div class="flex flex-wrap justify-center gap-2">
+          {
+            mop?.tags?.map((tag) => (
+              <a
+                href={`/cerita/tag/${tag}/`}
+                class="bg-blue-50 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400 rounded-full px-2 py-0.5 text-xs font-medium hover:bg-blue-100 transition-colors"
+              >
+                {tag}
+              </a>
+            ))
+          }
+        </div>
+      </div>
     </div>
 
     <div class="space-y-6">
