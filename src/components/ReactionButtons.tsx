@@ -133,8 +133,8 @@ export default function ReactionButtons({ mopId }: ReactionButtonsProps) {
                 "flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm font-medium transition-all",
                 "hover:scale-105 active:scale-95 disabled:cursor-not-allowed disabled:opacity-50",
                 active
-                  ? "border-blue-400 bg-blue-50 text-blue-700 dark:border-blue-500 dark:bg-blue-950 dark:text-blue-300"
-                  : "border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:hover:border-gray-600 dark:hover:bg-gray-800",
+                  ? "border-blue-400 bg-blue-50 text-blue-700"
+                  : "border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50",
               ].join(" ")}
             >
               <span className="text-base leading-none" aria-hidden="true">
@@ -146,8 +146,8 @@ export default function ReactionButtons({ mopId }: ReactionButtonsProps) {
                   className={[
                     "min-w-[1.25rem] rounded-full px-1 text-center text-xs font-semibold tabular-nums",
                     active
-                      ? "bg-blue-200 text-blue-800 dark:bg-blue-800 dark:text-blue-200"
-                      : "bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400",
+                      ? "bg-blue-200 text-blue-800"
+                      : "bg-gray-100 text-gray-600",
                     loading ? "animate-pulse" : "",
                   ].join(" ")}
                 >

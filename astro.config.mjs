@@ -6,7 +6,7 @@ import cloudflare from "@astrojs/cloudflare";
 import { fileURLToPath } from "node:url";
 
 export default defineConfig({
-  site: "https://mops.web.id",
+  site: "https://mopz.pages.dev",
   trailingSlash: "always",
   output: "server",
 

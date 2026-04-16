@@ -59,13 +59,13 @@ const pageUrl = Astro.url.href;
         mop?.content.map((part, index) => (
           <div class="flex flex-col space-y-2">
             {part.type === "narration" ? (
-              <p class="border-l-2 border-gray-200 pl-4 text-gray-600 dark:border-gray-700 dark:text-gray-400">
+              <p class="border-l-2 border-gray-200 pl-4 text-gray-600">
                 {part.content}
               </p>
             ) : (
               <>
                 <div class="font-medium">{part.speaker}</div>
-                <div class="rounded-lg border p-4 dark:border-gray-700">
+                <div class="rounded-lg border p-4">
                   {part.content}
                 </div>
               </>
