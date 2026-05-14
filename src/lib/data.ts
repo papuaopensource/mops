@@ -9,6 +9,7 @@ export interface Mop {
   title: string;
   date: string;
   tags: string[];
+  credit?: string;
   content: Content[];
 }
 
