@@ -1,6 +1,6 @@
 // StoryPageComponent.tsx
 import { useState, useEffect, useMemo } from "react";
-import { ChevronRight, Search, X, Calendar, Tag } from "lucide-react";
+import { ChevronRight, Search, X, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -55,16 +55,6 @@ export default function CeritaPageComponent({
   const [visibleCount, setVisibleCount] = useState(5);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedMonth, setSelectedMonth] = useState("all");
-  const [selectedTag, setSelectedTag] = useState("all");
-
-  const allTags = useMemo(() => {
-    const tags = new Set<string>();
-    availableMops.forEach((mop) => {
-      mop.tags?.forEach((tag) => tags.add(tag));
-    });
-    return Array.from(tags).sort();
-  }, [availableMops]);
-
   const filteredMops = useMemo(() => {
     let result = [...availableMops];
 
@@ -84,12 +74,8 @@ export default function CeritaPageComponent({
       result = result.filter((mop) => getMonthYear(mop.date) === selectedMonth);
     }
 
-    if (selectedTag !== "all") {
-      result = result.filter((mop) => mop.tags?.includes(selectedTag));
-    }
-
     return result;
-  }, [searchTerm, selectedMonth, selectedTag, availableMops]);
+  }, [searchTerm, selectedMonth, availableMops]);
 
   const groupedMops = useMemo(
     () => groupMopsByMonth(filteredMops),
@@ -151,7 +137,7 @@ export default function CeritaPageComponent({
 
   useEffect(() => {
     setVisibleCount(5);
-  }, [searchTerm, selectedMonth, selectedTag]);
+  }, [searchTerm, selectedMonth]);
 
   const totalMops = filteredMops.length;
 
@@ -166,7 +152,7 @@ export default function CeritaPageComponent({
   return (
     <div>
       <div className="mb-8 space-y-3">
-        <div className="flex flex-col gap-2 sm:flex-row">
+        <div className="flex gap-2">
           <div className="relative flex-1">
             <Search className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-neutral-500" />
             <Input
@@ -186,37 +172,20 @@ export default function CeritaPageComponent({
             )}
           </div>
 
-          <div className="flex gap-2">
-            <Select value={selectedTag} onValueChange={setSelectedTag}>
-              <SelectTrigger className="w-full sm:w-[140px]">
-                <Tag className="mr-2 h-4 w-4" />
-                <SelectValue placeholder="Pilih tag" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">Semua Tag</SelectItem>
-                {allTags.map((tag) => (
-                  <SelectItem key={tag} value={tag}>
-                    {tag.charAt(0).toUpperCase() + tag.slice(1)}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-
-            <Select value={selectedMonth} onValueChange={setSelectedMonth}>
-              <SelectTrigger className="w-full sm:w-[140px]">
-                <Calendar className="mr-2 h-4 w-4" />
-                <SelectValue placeholder="Pilih bulan" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">Semua Bulan</SelectItem>
-                {allMonths.map((month) => (
-                  <SelectItem key={month} value={month}>
-                    {month}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
+          <Select value={selectedMonth} onValueChange={setSelectedMonth}>
+            <SelectTrigger className="w-[180px]">
+              <Calendar className="mr-2 h-4 w-4" />
+              <SelectValue placeholder="Pilih bulan" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">Semua Bulan</SelectItem>
+              {allMonths.map((month) => (
+                <SelectItem key={month} value={month}>
+                  {month}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
         </div>
 
         <div className="text-xs text-neutral-500">
@@ -238,18 +207,6 @@ export default function CeritaPageComponent({
                 {group.mops.map((mop) => (
                   <div key={mop.id} className="border-b border-neutral-800 pb-4 last:border-0 last:pb-0">
                     <a href={`/cerita/${mop.id}/`} className="group block">
-                      {mop.tags && mop.tags.length > 0 && (
-                        <div className="mb-1.5 flex flex-wrap gap-1.5">
-                          {mop.tags.map((tag) => (
-                            <span
-                              key={tag}
-                              className="rounded border border-neutral-700 px-1.5 py-0.5 text-xs text-neutral-500"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      )}
                       <h3 className="mb-1 text-sm font-medium text-neutral-200 group-hover:text-neutral-100 transition-colors">
                         {mop.title}
                       </h3>
@@ -276,7 +233,6 @@ export default function CeritaPageComponent({
             onClick={() => {
               setSearchTerm("");
               setSelectedMonth("all");
-              setSelectedTag("all");
             }}
             className="mt-4"
           >

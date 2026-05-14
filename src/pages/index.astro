@@ -32,19 +32,7 @@ const todayMop = getTodayMop(mops);
         <div class="mb-10 text-center">
           <p class="mb-3 text-xs uppercase tracking-widest text-neutral-500">hari ini</p>
           <h1 class="mb-2 text-2xl font-semibold text-neutral-100">{todayMop.title}</h1>
-          <p class="mb-3 text-sm text-neutral-500">{todayMop.date}</p>
-          {todayMop.tags && todayMop.tags.length > 0 && (
-            <div class="flex flex-wrap justify-center gap-1.5">
-              {todayMop.tags.map((tag: string) => (
-                <a
-                  href={`/cerita/tag/${tag}/`}
-                  class="rounded border border-neutral-700 px-2 py-0.5 text-xs text-neutral-500 transition-colors hover:border-neutral-500 hover:text-neutral-300"
-                >
-                  {tag}
-                </a>
-              ))}
-            </div>
-          )}
+          <p class="text-sm text-neutral-500">{todayMop.date}</p>
         </div>
 
         <div class="space-y-5">
