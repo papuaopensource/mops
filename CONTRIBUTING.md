@@ -26,19 +26,19 @@ pnpm dev
 
 ### Menambah Cerita Lewat Kode
 
-Tambahkan entri baru ke array `mops` di [`src/lib/data.ts`](src/lib/data.ts):
+Tambahkan entri baru ke array di [`src/data/stories.json`](src/data/stories.json):
 
-```ts
+```json
 {
-  id: "id-unik-kebab-case",
-  title: "Judul Cerita",
-  date: "1 Januari 2026",      // format: D MMMM YYYY
-  credit: "Nama Pengirim",     // opsional
-  tags: [],
-  content: [
-    { type: "narration", content: "Narasi cerita..." },
-    { type: "dialogue", speaker: "Nama", content: "Dialog..." },
-  ],
+  "id": "id-unik-kebab-case",
+  "title": "Judul Cerita",
+  "date": "1 Januari 2026",
+  "credit": "Nama Pengirim",
+  "tags": [],
+  "content": [
+    { "type": "narration", "content": "Narasi cerita..." },
+    { "type": "dialogue", "speaker": "Nama", "content": "Dialog..." }
+  ]
 }
 ```
 
@@ -56,12 +56,15 @@ Cerita hanya tampil pada atau setelah tanggal `date` yang ditentukan.
 ```
 src/
 ├── components/   # Komponen Astro & React
+├── data/
+│   └── stories.json  # Data cerita mop
 ├── layouts/      # Layout halaman
 ├── lib/
-│   ├── data.ts   # Data cerita mop
 │   └── utils.ts  # Helper functions
 ├── pages/        # Routing halaman
-└── styles/       # CSS global
+├── styles/       # CSS global
+└── types/
+    └── index.d.ts    # Type definitions (Mop, Content)
 ```
 
 
