@@ -4,7 +4,6 @@ import { parseDate } from "@/lib/utils";
 import Layout from "@/layouts/Layout.astro";
 import Link from "@/components/Link.astro";
 import ShareButtons from "@/components/ShareButtons";
-import ReactionButtons from "@/components/ReactionButtons";
 
 export const prerender = false;
 
@@ -57,10 +56,6 @@ const pageUrl = Astro.url.href;
           </div>
         ))
       }
-    </div>
-
-    <div class="mt-10 border-t border-neutral-800 pt-8">
-      <ReactionButtons client:load mopId={mop.id} />
     </div>
 
     <div class="mt-6 border-t border-neutral-800 pt-6">
