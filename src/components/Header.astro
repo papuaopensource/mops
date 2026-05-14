@@ -3,7 +3,6 @@ import Link from "@/components/Link.astro";
 
 const pathname = Astro.url.pathname;
 
-// Function to check if a path is active
 const isActive = (path: string) => {
   if (path === "/") {
     return pathname === "/";
@@ -12,72 +11,64 @@ const isActive = (path: string) => {
 };
 ---
 
-<header class="border-b">
+<header class="border-b border-neutral-800">
   <div class="mx-auto flex max-w-4xl items-center justify-between px-4 py-4">
-    <Link href="/" class="text-xl font-bold"> mops </Link>
-    <div class="flex items-center space-x-6">
-      <nav class="flex space-x-6">
-        <Link
-          href="/"
-          class={`relative py-1 text-gray-600 hover:text-gray-900 ${
-            isActive("/") && pathname === "/"
-              ? "font-medium text-gray-900"
-              : ""
-          }`}
-        >
-          teras
-          {
-            isActive("/") && pathname === "/" && (
-              <span class="absolute bottom-0 left-0 h-0.5 w-full bg-gray-900" />
-            )
-          }
-        </Link>
-        <Link
-          href="/cerita/"
-          class={`relative py-1 text-gray-600 hover:text-gray-900 ${
-            isActive("/cerita/")
-              ? "font-medium text-gray-900"
-              : ""
-          }`}
-        >
-          cerita
-          {
-            isActive("/cerita/") && (
-              <span class="absolute bottom-0 left-0 h-0.5 w-full bg-gray-900" />
-            )
-          }
-        </Link>
-        <Link
-          href="/tentang/"
-          class={`relative py-1 text-gray-600 hover:text-gray-900 ${
-            isActive("/tentang/")
-              ? "font-medium text-gray-900"
-              : ""
-          }`}
-        >
-          tentang
-          {
-            isActive("/tentang/") && (
-              <span class="absolute bottom-0 left-0 h-0.5 w-full bg-gray-900" />
-            )
-          }
-        </Link>
-        <Link
-          href="/kontribusi/"
-          class={`relative py-1 text-gray-600 hover:text-gray-900 ${
-            isActive("/kontribusi/")
-              ? "font-medium text-gray-900"
-              : ""
-          }`}
-        >
-          kontribusi
-          {
-            isActive("/kontribusi/") && (
-              <span class="absolute bottom-0 left-0 h-0.5 w-full bg-gray-900" />
-            )
-          }
-        </Link>
-      </nav>
-    </div>
+    <Link href="/" class="text-xl font-bold tracking-tight text-neutral-100">
+      mops
+    </Link>
+    <nav class="flex items-center space-x-6">
+      <Link
+        href="/"
+        class={`relative py-1 text-sm text-neutral-400 hover:text-neutral-100 transition-colors ${
+          isActive("/") && pathname === "/" ? "text-neutral-100" : ""
+        }`}
+      >
+        teras
+        {
+          isActive("/") && pathname === "/" && (
+            <span class="absolute bottom-0 left-0 h-px w-full bg-neutral-100" />
+          )
+        }
+      </Link>
+      <Link
+        href="/cerita/"
+        class={`relative py-1 text-sm text-neutral-400 hover:text-neutral-100 transition-colors ${
+          isActive("/cerita/") ? "text-neutral-100" : ""
+        }`}
+      >
+        cerita
+        {
+          isActive("/cerita/") && (
+            <span class="absolute bottom-0 left-0 h-px w-full bg-neutral-100" />
+          )
+        }
+      </Link>
+      <Link
+        href="/tentang/"
+        class={`relative py-1 text-sm text-neutral-400 hover:text-neutral-100 transition-colors ${
+          isActive("/tentang/") ? "text-neutral-100" : ""
+        }`}
+      >
+        tentang
+        {
+          isActive("/tentang/") && (
+            <span class="absolute bottom-0 left-0 h-px w-full bg-neutral-100" />
+          )
+        }
+      </Link>
+      <Link
+        href="/kontribusi/"
+        class={`relative py-1 text-sm text-neutral-400 hover:text-neutral-100 transition-colors ${
+          isActive("/kontribusi/") ? "text-neutral-100" : ""
+        }`}
+      >
+        kontribusi
+        {
+          isActive("/kontribusi/") && (
+            <span class="absolute bottom-0 left-0 h-px w-full bg-neutral-100" />
+          )
+        }
+      </Link>
+    </nav>
   </div>
 </header>
