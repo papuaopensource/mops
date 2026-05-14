@@ -48,7 +48,7 @@ export default function ShareButtons({
   };
 
   const btnClass =
-    "inline-flex items-center gap-1.5 rounded border border-neutral-700 bg-neutral-700/50 px-3 py-1.5 text-xs text-neutral-400 transition-colors hover:border-neutral-600 hover:text-neutral-200";
+    "inline-flex items-center gap-1.5 rounded border border-white/10 bg-neutral-700/50 px-3 py-1.5 text-xs text-neutral-400 transition-colors hover:border-white/10 hover:text-neutral-200";
 
   return (
     <div className="flex flex-wrap items-center gap-2">

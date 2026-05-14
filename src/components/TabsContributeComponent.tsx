@@ -81,7 +81,7 @@ const ContributeTabs: React.FC = () => {
               </ul>
             </div>
 
-            <div className="rounded border border-neutral-600 bg-neutral-700/50 p-4">
+            <div className="rounded border border-white/10 bg-neutral-700/50 p-4">
               <h3 className="mb-2 font-medium text-neutral-200">Contoh:</h3>
               <div className="space-y-3 text-sm text-neutral-400">
                 <p className="italic">
@@ -152,8 +152,8 @@ const ContributeTabs: React.FC = () => {
             </p>
 
             <div className="grid gap-4 md:grid-cols-3">
-              <div className="rounded border border-neutral-700 bg-neutral-700/40 p-4 text-center">
-                <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded border border-neutral-600 text-neutral-400">
+              <div className="rounded border border-white/10 bg-neutral-700/40 p-4 text-center">
+                <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded border border-white/10 text-neutral-400">
                   <Code className="h-5 w-5" />
                 </div>
                 <h3 className="mb-1 text-sm font-medium text-neutral-300">Perbaiki Bug</h3>
@@ -162,8 +162,8 @@ const ContributeTabs: React.FC = () => {
                 </p>
               </div>
 
-              <div className="rounded border border-neutral-700 bg-neutral-700/40 p-4 text-center">
-                <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded border border-neutral-600 text-neutral-400">
+              <div className="rounded border border-white/10 bg-neutral-700/40 p-4 text-center">
+                <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded border border-white/10 text-neutral-400">
                   <Heart className="h-5 w-5" />
                 </div>
                 <h3 className="mb-1 text-sm font-medium text-neutral-300">Berikan Saran</h3>
@@ -172,8 +172,8 @@ const ContributeTabs: React.FC = () => {
                 </p>
               </div>
 
-              <div className="rounded border border-neutral-700 bg-neutral-700/40 p-4 text-center">
-                <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded border border-neutral-600 text-neutral-400">
+              <div className="rounded border border-white/10 bg-neutral-700/40 p-4 text-center">
+                <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded border border-white/10 text-neutral-400">
                   <Github className="h-5 w-5" />
                 </div>
                 <h3 className="mb-1 text-sm font-medium text-neutral-300">Kirim Kode</h3>
@@ -210,7 +210,7 @@ const ContributeTabs: React.FC = () => {
           <CardContent className="space-y-6 text-sm text-neutral-400">
             <p>Anda juga bisa berkontribusi dengan cara yang sangat mudah:</p>
 
-            <div className="rounded border border-neutral-700 bg-neutral-700/40 p-6 text-center">
+            <div className="rounded border border-white/10 bg-neutral-700/40 p-6 text-center">
               <h3 className="mb-3 font-medium text-neutral-200">Bagikan Situs Ini</h3>
               <p className="mb-6 text-sm text-neutral-400">
                 Ceritakan tentang Mops Papua dan ajak lebih banyak orang untuk

@@ -22,7 +22,7 @@ const todayMop = getTodayMop(mops);
         </p>
         <a
           href="/cerita/"
-          class="inline-flex items-center justify-center rounded border border-neutral-600 px-4 py-2 text-sm text-neutral-300 transition-colors hover:border-neutral-500 hover:text-neutral-100"
+          class="inline-flex items-center justify-center rounded border border-white/10 px-4 py-2 text-sm text-neutral-300 transition-colors hover:border-white/20 hover:text-neutral-100"
         >
           Lihat Semua Cerita
         </a>
@@ -44,13 +44,13 @@ const todayMop = getTodayMop(mops);
           {todayMop.content.map((part: any) => (
             <div class="flex flex-col space-y-1">
               {part.type === "narration" ? (
-                <p class="border-l border-neutral-600 pl-4 text-sm text-neutral-400 leading-relaxed">
+                <p class="border-l border-white/10 pl-4 text-sm text-neutral-400 leading-relaxed">
                   {part.content}
                 </p>
               ) : (
                 <>
                   <div class="text-xs font-medium uppercase tracking-wide text-neutral-500">{part.speaker}</div>
-                  <div class="rounded border border-neutral-700 bg-neutral-700/50 px-4 py-3 text-sm text-neutral-200 leading-relaxed">
+                  <div class="rounded border border-white/10 bg-neutral-700/50 px-4 py-3 text-sm text-neutral-200 leading-relaxed">
                     {part.content}
                   </div>
                 </>

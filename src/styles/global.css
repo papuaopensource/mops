@@ -62,8 +62,8 @@ body {
   --accent: oklch(0.349 0 0);           /* neutral-600 */
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(0.349 0 0);           /* neutral-600 */
-  --input: oklch(0.349 0 0);            /* neutral-600 */
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 10%);
   --ring: oklch(0.655 0 0);             /* neutral-400 */
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
