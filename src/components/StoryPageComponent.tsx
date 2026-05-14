@@ -203,15 +203,15 @@ export default function CeritaPageComponent({
                 {group.month}
               </h2>
 
-              <div className="space-y-3 border-l border-neutral-800 pl-4">
+              <div className="space-y-3 border-l border-neutral-700 pl-4">
                 {group.mops.map((mop) => (
-                  <div key={mop.id} className="border-b border-neutral-800 pb-4 last:border-0 last:pb-0">
+                  <div key={mop.id} className="border-b border-neutral-700 pb-4 last:border-0 last:pb-0">
                     <a href={`/cerita/${mop.id}/`} className="group block">
                       <h3 className="mb-1 text-sm font-medium text-neutral-200 group-hover:text-neutral-100 transition-colors">
                         {mop.title}
                       </h3>
-                      <p className="mb-1 text-xs text-neutral-600">
-                        {mop.date}
+                      <p className="mb-1 text-xs text-neutral-500">
+                        {mop.date}{mop.credit && <> · <span className="text-neutral-400">{mop.credit}</span></>}
                       </p>
                       <p className="line-clamp-2 text-xs text-neutral-500">
                         {mop.content[0]?.content || ""}
@@ -224,7 +224,7 @@ export default function CeritaPageComponent({
           ))}
         </div>
       ) : (
-        <div className="rounded border border-dashed border-neutral-800 p-8 text-center">
+        <div className="rounded border border-dashed border-neutral-700 p-8 text-center">
           <p className="text-sm text-neutral-500">
             Tidak ada cerita yang sesuai dengan kriteria pencarian Anda.
           </p>

@@ -35,6 +35,11 @@ const pageUrl = Astro.url.href;
     <div class="mb-10 text-center">
       <h1 class="mb-2 text-2xl font-semibold text-neutral-100">{mop?.title}</h1>
       <p class="text-sm text-neutral-500">{mop?.date}</p>
+      {mop?.credit && (
+        <p class="mt-1 text-xs text-neutral-500">
+          dikirim oleh <span class="text-neutral-400">{mop.credit}</span>
+        </p>
+      )}
     </div>
 
     <div class="space-y-5">
@@ -42,13 +47,13 @@ const pageUrl = Astro.url.href;
         mop?.content.map((part) => (
           <div class="flex flex-col space-y-1">
             {part.type === "narration" ? (
-              <p class="border-l border-neutral-700 pl-4 text-sm text-neutral-400 leading-relaxed">
+              <p class="border-l border-neutral-600 pl-4 text-sm text-neutral-400 leading-relaxed">
                 {part.content}
               </p>
             ) : (
               <>
                 <div class="text-xs font-medium uppercase tracking-wide text-neutral-500">{part.speaker}</div>
-                <div class="rounded border border-neutral-800 bg-neutral-800/50 px-4 py-3 text-sm text-neutral-200 leading-relaxed">
+                <div class="rounded border border-neutral-700 bg-neutral-700/50 px-4 py-3 text-sm text-neutral-200 leading-relaxed">
                   {part.content}
                 </div>
               </>
@@ -58,7 +63,7 @@ const pageUrl = Astro.url.href;
       }
     </div>
 
-    <div class="mt-6 border-t border-neutral-800 pt-6">
+    <div class="mt-6 border-t border-neutral-700 pt-6">
       <ShareButtons
         client:load
         title={mop.title}
