@@ -222,7 +222,7 @@ const ContributeTabs: React.FC = () => {
                   variant="outline"
                   className="gap-2"
                   onClick={() => {
-                    const url = "https://mops.web.id";
+                    const url = "https://ceritamop.com";
                     const text =
                       "Mops Papua - Kumpulan cerita lucu khas Papua. Mari nikmati dan lestarikan mop Papua!";
                     window.open(
@@ -247,7 +247,7 @@ const ContributeTabs: React.FC = () => {
                   variant="outline"
                   className="gap-2"
                   onClick={() => {
-                    const url = "https://mops.web.id";
+                    const url = "https://ceritamop.com";
                     const text =
                       "Mops Papua - Kumpulan cerita lucu khas Papua. Mari nikmati dan lestarikan mop Papua! #MopsPapua #CeritaLucu";
                     window.open(
@@ -272,7 +272,7 @@ const ContributeTabs: React.FC = () => {
                   variant="outline"
                   className="gap-2"
                   onClick={() => {
-                    const url = "https://mops.web.id";
+                    const url = "https://ceritamop.com";
                     const text =
                       "Mops Papua - Kumpulan cerita lucu khas Papua. Mari nikmati dan lestarikan mop Papua bersama!";
                     window.open(

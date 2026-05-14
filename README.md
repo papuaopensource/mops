@@ -16,7 +16,7 @@ Mops dibangun menggunakan:
 ## Link Penting
 
 - **Kode Sumber**: [https://github.com/papuaopensource/mops](https://github.com/papuaopensource/mops)
-- **Website**: [https://mopz.pages.dev](https://mopz.pages.dev)
+- **Website**: [https://ceritamop.com](https://ceritamop.com)
 
 ## Lisensi
 
@@ -36,6 +36,6 @@ Kami menyambut kontribusi! Untuk berkontribusi:
 
 ## Kontak
 
-Punya pertanyaan? Buka issue di repositori atau kunjungi [https://mopz.pages.dev](https://mopz.pages.dev).
+Punya pertanyaan? Buka issue di repositori atau kunjungi [https://ceritamop.com](https://ceritamop.com).
 
 Mari lestarikan budaya Papua melalui cerita dan tawa!
