@@ -11,7 +11,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { parseDate } from "@/lib/utils";
-import type { Mop } from "@/lib/data";
+import type { Mop } from "@/types";
 
 function getMonthYear(dateString: string) {
   const parts = dateString.split(" ");

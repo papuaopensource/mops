@@ -1,16 +1,14 @@
-// Definisikan tipe data untuk struktur JSON
-type Scene = {
-  type: string;
-  content?: string;
+export interface Content {
+  type: "narration" | "dialogue";
   speaker?: string;
-  message?: string;
-};
+  content: string;
+}
 
-export type Story = {
-  id: number;
+export interface Mop {
+  id: string;
   title: string;
-  slug: string;
-  description: string;
-  created_at: string;
-  scenes: Scene[];
-};
+  date: string;
+  tags: string[];
+  credit?: string;
+  content: Content[];
+}
