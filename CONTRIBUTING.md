@@ -48,7 +48,7 @@ Cerita hanya tampil pada atau setelah tanggal `date` yang ditentukan.
 
 1. Fork repositori
 2. Buat branch baru: `git checkout -b nama-branch`
-3. Buat perubahan, jalankan `npm run format` sebelum commit
+3. Buat perubahan, jalankan `pnpm run format` sebelum commit
 4. Push dan buka Pull Request ke branch `master`
 
 ### Struktur Proyek
