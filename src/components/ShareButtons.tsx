@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Facebook, Share2, Check, Link } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 interface ShareButtonsProps {
   title: string;
@@ -37,7 +36,6 @@ export default function ShareButtons({
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {
-      // fallback for older browsers
       const el = document.createElement("textarea");
       el.value = url;
       document.body.appendChild(el);
@@ -49,34 +47,32 @@ export default function ShareButtons({
     }
   };
 
+  const btnClass =
+    "inline-flex items-center gap-1.5 rounded border border-neutral-800 bg-neutral-800/50 px-3 py-1.5 text-xs text-neutral-400 transition-colors hover:border-neutral-600 hover:text-neutral-200";
+
   return (
     <div className="flex flex-wrap items-center gap-2">
-      <span className="text-muted-foreground flex items-center gap-1 text-sm">
-        <Share2 className="h-4 w-4" />
+      <span className="flex items-center gap-1 text-xs text-neutral-500">
+        <Share2 className="h-3.5 w-3.5" />
         Bagikan:
       </span>
 
-      <Button
-        variant="outline"
-        size="sm"
+      <button
         onClick={() => openShare(shareLinks.facebook)}
-        className="flex items-center gap-1.5"
+        className={btnClass}
         aria-label="Bagikan ke Facebook"
       >
-        <Facebook className="h-4 w-4" />
+        <Facebook className="h-3.5 w-3.5" />
         Facebook
-      </Button>
+      </button>
 
-      <Button
-        variant="outline"
-        size="sm"
+      <button
         onClick={() => openShare(shareLinks.whatsapp)}
-        className="flex items-center gap-1.5"
+        className={btnClass}
         aria-label="Bagikan ke WhatsApp"
       >
-        {/* WhatsApp icon via inline SVG since lucide doesn't ship it */}
         <svg
-          className="h-4 w-4"
+          className="h-3.5 w-3.5"
           viewBox="0 0 24 24"
           fill="currentColor"
           aria-hidden="true"
@@ -85,18 +81,16 @@ export default function ShareButtons({
           <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.862L.057 23.999l6.305-1.654A11.954 11.954 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.206-1.487l-.373-.222-3.742.981.999-3.648-.243-.374A9.817 9.817 0 0 1 2.182 12C2.182 6.575 6.575 2.182 12 2.182S21.818 6.575 21.818 12 17.425 21.818 12 21.818z" />
         </svg>
         WhatsApp
-      </Button>
+      </button>
 
-      <Button
-        variant="outline"
-        size="sm"
+      <button
         onClick={() => openShare(shareLinks.x)}
-        className="flex items-center gap-1.5"
+        className={btnClass}
         aria-label="Bagikan ke X"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-4 w-4"
+          className="h-3.5 w-3.5"
           viewBox="0 0 24 24"
         >
           <path
@@ -108,28 +102,26 @@ export default function ShareButtons({
             d="m4 4l11.733 16H20L8.267 4zm0 16l6.768-6.768m2.46-2.46L20 4"
           />
         </svg>
-        X
-      </Button>
+        Twitter
+      </button>
 
-      <Button
-        variant="outline"
-        size="sm"
+      <button
         onClick={copyLink}
-        className="flex items-center gap-1.5"
+        className={btnClass}
         aria-label="Salin link"
       >
         {copied ? (
           <>
-            <Check className="h-4 w-4 text-green-500" />
+            <Check className="h-3.5 w-3.5 text-green-500" />
             <span className="text-green-500">Tersalin!</span>
           </>
         ) : (
           <>
-            <Link className="h-4 w-4" />
+            <Link className="h-3.5 w-3.5" />
             Salin Link
           </>
         )}
-      </Button>
+      </button>
     </div>
   );
 }

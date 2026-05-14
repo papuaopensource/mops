@@ -13,7 +13,6 @@ import {
 import { parseDate } from "@/lib/utils";
 import type { Mop } from "@/lib/data";
 
-// Fungsi untuk mendapatkan bulan dan tahun dari string tanggal
 function getMonthYear(dateString: string) {
   const parts = dateString.split(" ");
   if (parts.length >= 2) {
@@ -22,7 +21,6 @@ function getMonthYear(dateString: string) {
   return dateString;
 }
 
-// Fungsi untuk mengelompokkan mops berdasarkan bulan
 function groupMopsByMonth(mops: Mop[]) {
   const grouped: Record<string, Mop[]> = {};
 
@@ -34,7 +32,6 @@ function groupMopsByMonth(mops: Mop[]) {
     grouped[monthYear].push(mop);
   });
 
-  // Urutkan berdasarkan tanggal (terbaru dulu)
   Object.keys(grouped).forEach((key) => {
     grouped[key].sort((a, b) => {
       const dateA = parseDate(a.date);
@@ -60,7 +57,6 @@ export default function CeritaPageComponent({
   const [selectedMonth, setSelectedMonth] = useState("all");
   const [selectedTag, setSelectedTag] = useState("all");
 
-  // Mendapatkan semua tag unik dari data mops yang tersedia
   const allTags = useMemo(() => {
     const tags = new Set<string>();
     availableMops.forEach((mop) => {
@@ -69,11 +65,9 @@ export default function CeritaPageComponent({
     return Array.from(tags).sort();
   }, [availableMops]);
 
-  // Filter mops berdasarkan pencarian, bulan, dan tag yang dipilih
   const filteredMops = useMemo(() => {
     let result = [...availableMops];
 
-    // Filter berdasarkan pencarian
     if (searchTerm) {
       const searchLower = searchTerm.toLowerCase();
       result = result.filter(
@@ -86,12 +80,10 @@ export default function CeritaPageComponent({
       );
     }
 
-    // Filter berdasarkan bulan
     if (selectedMonth !== "all") {
       result = result.filter((mop) => getMonthYear(mop.date) === selectedMonth);
     }
 
-    // Filter berdasarkan tag
     if (selectedTag !== "all") {
       result = result.filter((mop) => mop.tags?.includes(selectedTag));
     }
@@ -99,25 +91,20 @@ export default function CeritaPageComponent({
     return result;
   }, [searchTerm, selectedMonth, selectedTag, availableMops]);
 
-  // Mengelompokkan mops berdasarkan bulan
   const groupedMops = useMemo(
     () => groupMopsByMonth(filteredMops),
     [filteredMops]
   );
 
-  // Mengurutkan group bulan dari yang terbaru
   const monthGroups = useMemo(() => {
     return Object.keys(groupedMops).sort((a, b) => {
-      // Mengonversi "Bulan Tahun" menjadi objek Date untuk perbandingan
       const [monthA, yearA] = a.split(" ");
       const [monthB, yearB] = b.split(" ");
 
-      // Membandingkan tahun terlebih dahulu
       if (yearA !== yearB) {
         return parseInt(yearB) - parseInt(yearA);
       }
 
-      // Jika tahun sama, bandingkan bulan
       const monthsOrder: Record<string, number> = {
         Januari: 0,
         Februari: 1,
@@ -137,7 +124,6 @@ export default function CeritaPageComponent({
     });
   }, [groupedMops]);
 
-  // Menghitung mops yang akan ditampilkan berdasarkan visibleCount
   const visibleMops = useMemo(() => {
     let totalMopsToShow = 0;
     const result: { month: string; mops: Mop[] }[] = [];
@@ -163,32 +149,26 @@ export default function CeritaPageComponent({
     return result;
   }, [groupedMops, monthGroups, visibleCount]);
 
-  // Reset pagination ketika filter berubah
   useEffect(() => {
     setVisibleCount(5);
   }, [searchTerm, selectedMonth, selectedTag]);
 
-  // Menghitung total mops yang tersedia
   const totalMops = filteredMops.length;
 
-  // Handler untuk tombol "Load More"
   const handleLoadMore = () => {
     setVisibleCount((prev) => Math.min(prev + 5, totalMops));
   };
 
-  // Handler untuk reset pencarian
   const handleResetSearch = () => {
     setSearchTerm("");
   };
 
   return (
     <div>
-      <div className="mb-8 space-y-4">
-        {/* Search and filter row */}
-        <div className="flex flex-col gap-3 sm:flex-row">
-          {/* Search input */}
+      <div className="mb-8 space-y-3">
+        <div className="flex flex-col gap-2 sm:flex-row">
           <div className="relative flex-1">
-            <Search className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-gray-500" />
+            <Search className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-neutral-500" />
             <Input
               type="text"
               placeholder="Cari cerita..."
@@ -199,7 +179,7 @@ export default function CeritaPageComponent({
             {searchTerm && (
               <button
                 onClick={handleResetSearch}
-                className="absolute top-1/2 right-3 -translate-y-1/2 text-gray-500 hover:text-gray-700"
+                className="absolute top-1/2 right-3 -translate-y-1/2 text-neutral-500 hover:text-neutral-200 transition-colors"
               >
                 <X className="h-4 w-4" />
               </button>
@@ -207,9 +187,8 @@ export default function CeritaPageComponent({
           </div>
 
           <div className="flex gap-2">
-            {/* Tag filter */}
             <Select value={selectedTag} onValueChange={setSelectedTag}>
-              <SelectTrigger className="w-full sm:w-[150px]">
+              <SelectTrigger className="w-full sm:w-[140px]">
                 <Tag className="mr-2 h-4 w-4" />
                 <SelectValue placeholder="Pilih tag" />
               </SelectTrigger>
@@ -223,9 +202,8 @@ export default function CeritaPageComponent({
               </SelectContent>
             </Select>
 
-            {/* Month filter */}
             <Select value={selectedMonth} onValueChange={setSelectedMonth}>
-              <SelectTrigger className="w-full sm:w-[150px]">
+              <SelectTrigger className="w-full sm:w-[140px]">
                 <Calendar className="mr-2 h-4 w-4" />
                 <SelectValue placeholder="Pilih bulan" />
               </SelectTrigger>
@@ -241,8 +219,7 @@ export default function CeritaPageComponent({
           </div>
         </div>
 
-        {/* Results info */}
-        <div className="text-sm text-gray-500">
+        <div className="text-xs text-neutral-500">
           {filteredMops.length === 0
             ? "Tidak ada cerita yang ditemukan"
             : `Menampilkan ${Math.min(visibleCount, totalMops)} dari ${totalMops} cerita`}
@@ -252,32 +229,34 @@ export default function CeritaPageComponent({
       {filteredMops.length > 0 ? (
         <div className="space-y-8">
           {visibleMops.map((group) => (
-            <div key={group.month} className="space-y-4">
-              <h2 className="text-lg font-medium text-gray-500">
+            <div key={group.month} className="space-y-3">
+              <h2 className="text-xs font-medium uppercase tracking-widest text-neutral-500">
                 {group.month}
               </h2>
 
-              <div className="space-y-4 border-l-2 border-gray-200 pl-4 dark:border-gray-700">
+              <div className="space-y-3 border-l border-neutral-800 pl-4">
                 {group.mops.map((mop) => (
-                  <div key={mop.id} className="border-b pb-4 last:border-0 last:pb-0">
+                  <div key={mop.id} className="border-b border-neutral-800 pb-4 last:border-0 last:pb-0">
                     <a href={`/cerita/${mop.id}/`} className="group block">
-                      <div className="mb-2 flex flex-wrap gap-2">
-                        {mop.tags?.map((tag) => (
-                          <span
-                            key={tag}
-                            className="bg-blue-50 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400 rounded-full px-2 py-0.5 text-xs font-medium"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                      <h3 className="mb-1 text-lg font-medium group-hover:text-blue-600">
+                      {mop.tags && mop.tags.length > 0 && (
+                        <div className="mb-1.5 flex flex-wrap gap-1.5">
+                          {mop.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="rounded border border-neutral-700 px-1.5 py-0.5 text-xs text-neutral-500"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                      <h3 className="mb-1 text-sm font-medium text-neutral-200 group-hover:text-neutral-100 transition-colors">
                         {mop.title}
                       </h3>
-                      <p className="text-muted-foreground mb-2 text-sm">
+                      <p className="mb-1 text-xs text-neutral-600">
                         {mop.date}
                       </p>
-                      <p className="line-clamp-2 text-gray-600">
+                      <p className="line-clamp-2 text-xs text-neutral-500">
                         {mop.content[0]?.content || ""}
                       </p>
                     </a>
@@ -288,8 +267,8 @@ export default function CeritaPageComponent({
           ))}
         </div>
       ) : (
-        <div className="rounded-lg border border-dashed p-8 text-center">
-          <p className="text-gray-500">
+        <div className="rounded border border-dashed border-neutral-800 p-8 text-center">
+          <p className="text-sm text-neutral-500">
             Tidak ada cerita yang sesuai dengan kriteria pencarian Anda.
           </p>
           <Button

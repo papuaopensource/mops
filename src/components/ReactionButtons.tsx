@@ -70,7 +70,6 @@ export default function ReactionButtons({ mopId }: ReactionButtonsProps) {
     const isRemoving = previous === key;
     const nextReaction = isRemoving ? null : key;
 
-    // optimistic update
     setCounts((prev) => {
       const next = { ...prev };
       if (isRemoving) {
@@ -96,7 +95,6 @@ export default function ReactionButtons({ mopId }: ReactionButtonsProps) {
         setCounts(updated);
       }
     } catch {
-      // revert on failure
       setCounts((prev) => {
         const next = { ...prev };
         if (isRemoving) {
@@ -116,7 +114,7 @@ export default function ReactionButtons({ mopId }: ReactionButtonsProps) {
 
   return (
     <div className="space-y-2">
-      <p className="text-muted-foreground text-sm font-medium">Reaksi kamu:</p>
+      <p className="text-xs uppercase tracking-wide text-neutral-500">Reaksi kamu</p>
       <div className="flex flex-wrap gap-2">
         {REACTIONS.map(({ key, emoji, label }) => {
           const active = userReaction === key;
@@ -130,24 +128,24 @@ export default function ReactionButtons({ mopId }: ReactionButtonsProps) {
               aria-label={`Reaksi ${label}${active ? " (aktif)" : ""}`}
               aria-pressed={active}
               className={[
-                "flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm font-medium transition-all",
+                "flex items-center gap-1.5 rounded border px-3 py-1.5 text-xs font-medium transition-colors",
                 "hover:scale-105 active:scale-95 disabled:cursor-not-allowed disabled:opacity-50",
                 active
-                  ? "border-blue-400 bg-blue-50 text-blue-700"
-                  : "border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50",
+                  ? "border-neutral-400 bg-neutral-700 text-neutral-100"
+                  : "border-neutral-800 bg-neutral-800/50 text-neutral-400 hover:border-neutral-600 hover:text-neutral-200",
               ].join(" ")}
             >
-              <span className="text-base leading-none" aria-hidden="true">
+              <span className="text-sm leading-none" aria-hidden="true">
                 {emoji}
               </span>
               <span>{label}</span>
               {(count > 0 || loading) && (
                 <span
                   className={[
-                    "min-w-[1.25rem] rounded-full px-1 text-center text-xs font-semibold tabular-nums",
+                    "min-w-[1.25rem] rounded px-1 text-center text-xs tabular-nums",
                     active
-                      ? "bg-blue-200 text-blue-800"
-                      : "bg-gray-100 text-gray-600",
+                      ? "bg-neutral-600 text-neutral-200"
+                      : "bg-neutral-700 text-neutral-400",
                     loading ? "animate-pulse" : "",
                   ].join(" ")}
                 >

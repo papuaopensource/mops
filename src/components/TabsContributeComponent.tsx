@@ -30,32 +30,32 @@ const ExternalLink: React.FC<ExternalLinkProps> = ({
 const ContributeTabs: React.FC = () => {
   return (
     <Tabs defaultValue="kirim-mop" className="w-full">
-      <TabsList className="mb-5 grid h-12 w-full grid-cols-3 rounded bg-gray-100 p-1">
+      <TabsList className="mb-5 grid h-12 w-full grid-cols-3 rounded bg-neutral-800 p-1">
         <TabsTrigger
           value="kirim-mop"
-          className="rounded-md py-2 transition-colors data-[state=active]:bg-white"
+          className="rounded py-2 text-sm transition-colors data-[state=active]:bg-neutral-700 data-[state=active]:text-neutral-100"
         >
           Kirim Mop
         </TabsTrigger>
         <TabsTrigger
           value="bantu-website"
-          className="rounded-md py-2 transition-colors data-[state=active]:bg-white"
+          className="rounded py-2 text-sm transition-colors data-[state=active]:bg-neutral-700 data-[state=active]:text-neutral-100"
         >
           Bantu Website
         </TabsTrigger>
         <TabsTrigger
           value="sebarkan"
-          className="rounded-md py-2 transition-colors data-[state=active]:bg-white"
+          className="rounded py-2 text-sm transition-colors data-[state=active]:bg-neutral-700 data-[state=active]:text-neutral-100"
         >
           Sebarkan
         </TabsTrigger>
       </TabsList>
 
       {/* Kirim Mop Section */}
-      <TabsContent value="kirim-mop">
-        <Card>
+      <TabsContent value="kirim-mop" className="w-full min-h-[480px]">
+        <Card className="w-full min-h-[480px]">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
+            <CardTitle className="flex items-center gap-2 text-neutral-100">
               <FileText className="h-5 w-5" />
               <span>Kirim Mop Papua</span>
             </CardTitle>
@@ -63,44 +63,41 @@ const ContributeTabs: React.FC = () => {
               Bagikan cerita lucu atau mop Papua untuk dinikmati banyak orang
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-6">
+          <CardContent className="space-y-6 text-sm text-neutral-400">
             <div>
-              <h3 className="mb-2 text-lg font-semibold">Format Mop:</h3>
+              <h3 className="mb-2 font-medium text-neutral-200">Format Mop:</h3>
               <p className="mb-4">
                 Mop adalah cerita ringan yang biasanya terdiri dari narasi dan
                 dialog. Gunakan format berikut untuk memudahkan pembacaan:
               </p>
               <ul className="mb-4 list-disc space-y-2 pl-5">
                 <li>
-                  <strong>Narasi:</strong> Penjelasan cerita atau kejadian
+                  <strong className="text-neutral-300">Narasi:</strong> Penjelasan cerita atau kejadian
                 </li>
                 <li>
-                  <strong>Dialog:</strong> Percakapan antar tokoh yang seru dan
+                  <strong className="text-neutral-300">Dialog:</strong> Percakapan antar tokoh yang seru dan
                   menghibur
                 </li>
               </ul>
             </div>
 
-            <div className="bg-muted rounded-lg p-4">
-              <h3 className="mb-2 text-lg font-semibold">Contoh:</h3>
-              <div className="space-y-3 text-sm">
+            <div className="rounded border border-neutral-700 bg-neutral-800/50 p-4">
+              <h3 className="mb-2 font-medium text-neutral-200">Contoh:</h3>
+              <div className="space-y-3 text-sm text-neutral-400">
                 <p className="italic">
                   [narasi] Suatu hari di kampung, anak-anak muda rencana latihan
                   vokal grup di gereja. Tapi karena waktu mepet, mereka cuma
                   sempat latihan sekali saja.
                 </p>
-
                 <p className="italic">
                   [dialog - Pendeta] "Eh, kam punya nama vokal grup apa?"
                 </p>
                 <p className="italic">
                   [dialog - Tinus] "Vokal Grup ini namanya TARMUDI."
                 </p>
-
                 <p className="italic">
                   [narasi] Pendeta penasaran jadi pendeta tanya lebih lanjut...
                 </p>
-
                 <p className="italic">
                   [dialog - Pendeta] "Oh, TARMUDI itu apa singkatannya?"
                 </p>
@@ -111,7 +108,7 @@ const ContributeTabs: React.FC = () => {
             </div>
 
             <div>
-              <h3 className="mb-2 text-lg font-semibold">Cara Kirim Mop:</h3>
+              <h3 className="mb-2 font-medium text-neutral-200">Cara Kirim Mop:</h3>
               <ol className="mb-6 list-decimal space-y-2 pl-5">
                 <li>
                   Siapkan file .txt, .docs, atau .pdf yang berisi mop Anda
@@ -121,13 +118,13 @@ const ContributeTabs: React.FC = () => {
               </ol>
               <div className="flex justify-center">
                 <ExternalLink href="https://forms.gle/hB9peLVjARqvPuEJ7">
-                  <Button className="cursor-pointer gap-2 border border-gray-300 bg-white text-gray-900 transition-colors hover:bg-gray-100">
+                  <Button variant="outline" className="cursor-pointer gap-2">
                     <FileText className="h-4 w-4" />
                     Kirim Mop Anda di sini
                   </Button>
                 </ExternalLink>
               </div>
-              <p className="text-muted-foreground mt-4 text-center text-sm">
+              <p className="mt-4 text-center text-xs text-neutral-500">
                 Mop yang dikirimkan akan kami periksa terlebih dahulu sebelum
                 dipublikasikan di situs.
               </p>
@@ -137,10 +134,10 @@ const ContributeTabs: React.FC = () => {
       </TabsContent>
 
       {/* Bantu Website Section */}
-      <TabsContent value="bantu-website">
-        <Card>
+      <TabsContent value="bantu-website" className="w-full min-h-[480px]">
+        <Card className="w-full min-h-[480px]">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
+            <CardTitle className="flex items-center gap-2 text-neutral-100">
               <Code className="h-5 w-5" />
               <span>Bantu Perkembangan Website</span>
             </CardTitle>
@@ -148,45 +145,45 @@ const ContributeTabs: React.FC = () => {
               Kontribusi teknis untuk membantu pengembangan situs Mops Papua
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-6">
+          <CardContent className="space-y-6 text-sm text-neutral-400">
             <p>
               Selain mengirimkan mop, Anda juga bisa membantu dengan cara
               teknis:
             </p>
 
             <div className="grid gap-4 md:grid-cols-3">
-              <div className="bg-muted rounded-lg p-4 text-center">
-                <div className="bg-background mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full">
-                  <Code className="h-6 w-6" />
+              <div className="rounded border border-neutral-800 bg-neutral-800/40 p-4 text-center">
+                <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded border border-neutral-700 text-neutral-400">
+                  <Code className="h-5 w-5" />
                 </div>
-                <h3 className="mb-2 font-medium">Perbaiki Bug</h3>
-                <p className="text-muted-foreground text-sm">
+                <h3 className="mb-1 text-sm font-medium text-neutral-300">Perbaiki Bug</h3>
+                <p className="text-xs text-neutral-500">
                   Membantu memperbaiki bug atau masalah lainnya di situs
                 </p>
               </div>
 
-              <div className="bg-muted rounded-lg p-4 text-center">
-                <div className="bg-background mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full">
-                  <Heart className="h-6 w-6" />
+              <div className="rounded border border-neutral-800 bg-neutral-800/40 p-4 text-center">
+                <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded border border-neutral-700 text-neutral-400">
+                  <Heart className="h-5 w-5" />
                 </div>
-                <h3 className="mb-2 font-medium">Berikan Saran</h3>
-                <p className="text-muted-foreground text-sm">
+                <h3 className="mb-1 text-sm font-medium text-neutral-300">Berikan Saran</h3>
+                <p className="text-xs text-neutral-500">
                   Memberikan saran atau ide fitur baru untuk pengembangan
                 </p>
               </div>
 
-              <div className="bg-muted rounded-lg p-4 text-center">
-                <div className="bg-background mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full">
-                  <Github className="h-6 w-6" />
+              <div className="rounded border border-neutral-800 bg-neutral-800/40 p-4 text-center">
+                <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded border border-neutral-700 text-neutral-400">
+                  <Github className="h-5 w-5" />
                 </div>
-                <h3 className="mb-2 font-medium">Kirim Kode</h3>
-                <p className="text-muted-foreground text-sm">
+                <h3 className="mb-1 text-sm font-medium text-neutral-300">Kirim Kode</h3>
+                <p className="text-xs text-neutral-500">
                   Mengirimkan kode di GitHub untuk pengembangan situs
                 </p>
               </div>
             </div>
 
-            <div className="mt-6 flex justify-center">
+            <div className="flex justify-center">
               <Button variant="outline" className="gap-2">
                 <Github className="h-4 w-4" />
                 <ExternalLink href="https://github.com/papuaopensource/mops">
@@ -199,10 +196,10 @@ const ContributeTabs: React.FC = () => {
       </TabsContent>
 
       {/* Sebarkan Section */}
-      <TabsContent value="sebarkan">
-        <Card>
+      <TabsContent value="sebarkan" className="w-full min-h-[480px]">
+        <Card className="w-full min-h-[480px]">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
+            <CardTitle className="flex items-center gap-2 text-neutral-100">
               <Share2 className="h-5 w-5" />
               <span>Sebarkan ke Komunitas</span>
             </CardTitle>
@@ -210,12 +207,12 @@ const ContributeTabs: React.FC = () => {
               Bantu menyebarkan Mops Papua ke lebih banyak orang
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-6">
+          <CardContent className="space-y-6 text-sm text-neutral-400">
             <p>Anda juga bisa berkontribusi dengan cara yang sangat mudah:</p>
 
-            <div className="bg-muted rounded-lg p-6 text-center">
-              <h3 className="mb-4 text-lg font-semibold">Bagikan Situs Ini</h3>
-              <p className="mb-6">
+            <div className="rounded border border-neutral-800 bg-neutral-800/40 p-6 text-center">
+              <h3 className="mb-3 font-medium text-neutral-200">Bagikan Situs Ini</h3>
+              <p className="mb-6 text-sm text-neutral-400">
                 Ceritakan tentang Mops Papua dan ajak lebih banyak orang untuk
                 ikut berkontribusi
               </p>
@@ -236,10 +233,9 @@ const ContributeTabs: React.FC = () => {
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
+                    width="14"
+                    height="14"
                     fill="currentColor"
-                    className="bi bi-facebook"
                     viewBox="0 0 16 16"
                   >
                     <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"></path>
@@ -262,10 +258,9 @@ const ContributeTabs: React.FC = () => {
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
+                    width="14"
+                    height="14"
                     fill="currentColor"
-                    className="bi bi-twitter-x"
                     viewBox="0 0 16 16"
                   >
                     <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"></path>
@@ -288,10 +283,9 @@ const ContributeTabs: React.FC = () => {
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
+                    width="14"
+                    height="14"
                     fill="currentColor"
-                    className="bi bi-whatsapp"
                     viewBox="0 0 16 16"
                   >
                     <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"></path>
@@ -301,12 +295,10 @@ const ContributeTabs: React.FC = () => {
               </div>
             </div>
 
-            <div className="mt-6 text-center">
-              <p className="text-muted-foreground text-sm">
-                Terima kasih atas kontribusi Anda! Mari bersama-sama menjaga dan
-                menyebarkan kebahagiaan Papua!
-              </p>
-            </div>
+            <p className="text-center text-xs text-neutral-500">
+              Terima kasih atas kontribusi Anda! Mari bersama-sama menjaga dan
+              menyebarkan kebahagiaan Papua!
+            </p>
           </CardContent>
         </Card>
       </TabsContent>
