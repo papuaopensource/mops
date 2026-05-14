@@ -1,29 +1,27 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Link from "@/components/Link.astro";
-
-import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
 ---
 
 <Layout
   title="Halaman Tidak Ditemukan"
   description="Halaman yang Anda cari tidak ditemukan."
 >
-  <main class="mx-auto max-w-2xl px-4 py-16 text-center">
-    <h1 class="mb-6 text-4xl font-bold">404</h1>
-    <h2 class="mb-8 text-2xl font-medium">Cerita Tidak Ditemukan</h2>
-
-    <p class="mb-8 text-gray-600">
+  <main class="mx-auto max-w-2xl px-4 py-24 text-center">
+    <p class="mb-2 text-xs uppercase tracking-widest text-neutral-600">404</p>
+    <h1 class="mb-3 text-2xl font-semibold text-neutral-100">Cerita Tidak Ditemukan</h1>
+    <p class="mb-8 text-sm text-neutral-400">
       Cerita yang Anda cari tidak ditemukan atau belum tersedia. Silakan kembali
       lagi nanti.
     </p>
-
-    <Button className="w-full">
-      <Link href="/cerita/" class="flex items-center gap-2">
-        <ArrowLeft className="h-4 w-4" />
-        Kembali ke Daftar Cerita
-      </Link>
-    </Button>
+    <Link
+      href="/cerita/"
+      class="inline-flex items-center gap-2 rounded border border-neutral-700 px-4 py-2 text-sm text-neutral-300 transition-colors hover:border-neutral-500 hover:text-neutral-100"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 12H5" /><path d="m12 19-7-7 7-7" />
+      </svg>
+      Kembali ke Daftar Cerita
+    </Link>
   </main>
 </Layout>

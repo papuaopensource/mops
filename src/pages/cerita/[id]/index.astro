@@ -1,8 +1,6 @@
 ---
 import { mops } from "@/lib/data";
 import { parseDate } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import Layout from "@/layouts/Layout.astro";
 import Link from "@/components/Link.astro";
 import ShareButtons from "@/components/ShareButtons";
@@ -34,38 +32,36 @@ const pageUrl = Astro.url.href;
   description={snippet ||
     "Baca cerita Mop Papua yang menghibur dan unik. Temukan kisah lucu dan menarik dari Papua."}
 >
-  <main class="mx-auto max-w-2xl px-4 py-12">
-    <div class="mb-8 text-center">
-      <h1 class="mb-6 text-3xl font-bold">{mop?.title}</h1>
-      <div class="flex flex-col items-center gap-2">
-        <p class="text-muted-foreground text-sm">{mop?.date}</p>
-        <div class="flex flex-wrap justify-center gap-2">
-          {
-            mop?.tags?.map((tag) => (
-              <a
-                href={`/cerita/tag/${tag}/`}
-                class="bg-blue-50 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400 rounded-full px-2 py-0.5 text-xs font-medium hover:bg-blue-100 transition-colors"
-              >
-                {tag}
-              </a>
-            ))
-          }
+  <main class="mx-auto max-w-2xl px-4 py-16">
+    <div class="mb-10 text-center">
+      <h1 class="mb-2 text-2xl font-semibold text-neutral-100">{mop?.title}</h1>
+      <p class="mb-3 text-sm text-neutral-500">{mop?.date}</p>
+      {mop?.tags && mop.tags.length > 0 && (
+        <div class="flex flex-wrap justify-center gap-1.5">
+          {mop.tags.map((tag) => (
+            <a
+              href={`/cerita/tag/${tag}/`}
+              class="rounded border border-neutral-700 px-2 py-0.5 text-xs text-neutral-500 transition-colors hover:border-neutral-500 hover:text-neutral-300"
+            >
+              {tag}
+            </a>
+          ))}
         </div>
-      </div>
+      )}
     </div>
 
-    <div class="space-y-6">
+    <div class="space-y-5">
       {
-        mop?.content.map((part, index) => (
-          <div class="flex flex-col space-y-2">
+        mop?.content.map((part) => (
+          <div class="flex flex-col space-y-1">
             {part.type === "narration" ? (
-              <p class="border-l-2 border-gray-200 pl-4 text-gray-600">
+              <p class="border-l border-neutral-700 pl-4 text-sm text-neutral-400 leading-relaxed">
                 {part.content}
               </p>
             ) : (
               <>
-                <div class="font-medium">{part.speaker}</div>
-                <div class="rounded-lg border p-4">
+                <div class="text-xs font-medium uppercase tracking-wide text-neutral-500">{part.speaker}</div>
+                <div class="rounded border border-neutral-800 bg-neutral-800/50 px-4 py-3 text-sm text-neutral-200 leading-relaxed">
                   {part.content}
                 </div>
               </>
@@ -75,11 +71,11 @@ const pageUrl = Astro.url.href;
       }
     </div>
 
-    <div class="mt-10 border-t pt-8">
+    <div class="mt-10 border-t border-neutral-800 pt-8">
       <ReactionButtons client:load mopId={mop.id} />
     </div>
 
-    <div class="mt-6 border-t pt-6">
+    <div class="mt-6 border-t border-neutral-800 pt-6">
       <ShareButtons
         client:load
         title={mop.title}
@@ -89,12 +85,15 @@ const pageUrl = Astro.url.href;
     </div>
 
     <div class="mt-8 flex items-center justify-end">
-      <Button variant="outline">
-        <Link href="/cerita/" class="flex items-center gap-2">
-          Baca yang Lain
-          <ArrowRight className="h-4 w-4" />
-        </Link>
-      </Button>
+      <Link
+        href="/cerita/"
+        class="inline-flex items-center gap-2 text-sm text-neutral-400 transition-colors hover:text-neutral-100"
+      >
+        Baca yang Lain
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+        </svg>
+      </Link>
     </div>
   </main>
 </Layout>
