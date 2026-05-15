@@ -30,22 +30,22 @@ const ExternalLink: React.FC<ExternalLinkProps> = ({
 const ContributeTabs: React.FC = () => {
   return (
     <Tabs defaultValue="kirim-mop" className="w-full">
-      <TabsList className="mb-5 grid h-12 w-full grid-cols-3 rounded bg-neutral-700 p-1">
+      <TabsList className="mb-5 grid h-auto w-full grid-cols-1 gap-1 rounded bg-neutral-700 p-1 sm:grid-cols-3">
         <TabsTrigger
           value="kirim-mop"
-          className="rounded py-2 text-sm transition-colors data-[state=active]:bg-neutral-600 data-[state=active]:text-neutral-100"
+          className="rounded py-2.5 text-sm transition-colors data-[state=active]:bg-neutral-600 data-[state=active]:text-neutral-100"
         >
           Kirim Cerita Mop
         </TabsTrigger>
         <TabsTrigger
           value="bantu-website"
-          className="rounded py-2 text-sm transition-colors data-[state=active]:bg-neutral-600 data-[state=active]:text-neutral-100"
+          className="rounded py-2.5 text-sm transition-colors data-[state=active]:bg-neutral-600 data-[state=active]:text-neutral-100"
         >
           Bantu Kembangkan Website
         </TabsTrigger>
         <TabsTrigger
           value="sebarkan"
-          className="rounded py-2 text-sm transition-colors data-[state=active]:bg-neutral-600 data-[state=active]:text-neutral-100"
+          className="rounded py-2.5 text-sm transition-colors data-[state=active]:bg-neutral-600 data-[state=active]:text-neutral-100"
         >
           Sebarkan ke Komunitas
         </TabsTrigger>
