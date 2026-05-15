@@ -35,19 +35,19 @@ const ContributeTabs: React.FC = () => {
           value="kirim-mop"
           className="rounded py-2 text-sm transition-colors data-[state=active]:bg-neutral-600 data-[state=active]:text-neutral-100"
         >
-          Kirim Mop
+          Kirim Cerita Mop
         </TabsTrigger>
         <TabsTrigger
           value="bantu-website"
           className="rounded py-2 text-sm transition-colors data-[state=active]:bg-neutral-600 data-[state=active]:text-neutral-100"
         >
-          Bantu Website
+          Bantu Kembangkan Website
         </TabsTrigger>
         <TabsTrigger
           value="sebarkan"
           className="rounded py-2 text-sm transition-colors data-[state=active]:bg-neutral-600 data-[state=active]:text-neutral-100"
         >
-          Sebarkan
+          Sebarkan ke Komunitas
         </TabsTrigger>
       </TabsList>
 
@@ -57,18 +57,17 @@ const ContributeTabs: React.FC = () => {
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-neutral-100">
               <FileText className="h-5 w-5" />
-              <span>Kirim Mop Papua</span>
+              <span>Kirim Cerita Mop</span>
             </CardTitle>
             <CardDescription>
-              Bagikan cerita lucu atau mop Papua untuk dinikmati banyak orang
+              Bagikan cerita mop favorit Anda untuk semua orang.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6 text-sm text-neutral-400">
             <div>
               <h3 className="mb-2 font-medium text-neutral-200">Format Mop:</h3>
               <p className="mb-4">
-                Mop adalah cerita ringan yang biasanya terdiri dari narasi dan
-                dialog. Gunakan format berikut untuk memudahkan pembacaan:
+                Gunakan format berikut untuk memudahkan pembacaan:
               </p>
               <ul className="mb-4 list-disc space-y-2 pl-5">
                 <li>
@@ -120,7 +119,7 @@ const ContributeTabs: React.FC = () => {
                 <ExternalLink href="https://forms.gle/hB9peLVjARqvPuEJ7">
                   <Button variant="outline" className="cursor-pointer gap-2">
                     <FileText className="h-4 w-4" />
-                    Kirim Mop Anda di sini
+                    Kirim cerita mop disini
                   </Button>
                 </ExternalLink>
               </div>
@@ -139,15 +138,15 @@ const ContributeTabs: React.FC = () => {
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-neutral-100">
               <Code className="h-5 w-5" />
-              <span>Bantu Perkembangan Website</span>
+              <span>Bantu Kembangkan Website</span>
             </CardTitle>
             <CardDescription>
-              Kontribusi teknis untuk membantu pengembangan situs Mops Papua
+              Kontribusi teknis untuk membantu pengembangan situs cerita mop
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6 text-sm text-neutral-400">
             <p>
-              Selain mengirimkan mop, Anda juga bisa membantu dengan cara
+              Selain mengirimkan cerita, Anda juga bisa membantu dengan cara
               teknis:
             </p>
 
@@ -204,7 +203,7 @@ const ContributeTabs: React.FC = () => {
               <span>Sebarkan ke Komunitas</span>
             </CardTitle>
             <CardDescription>
-              Bantu menyebarkan Mops Papua ke lebih banyak orang
+              Bantu menyebarkan cerita mop ke lebih banyak orang
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6 text-sm text-neutral-400">
@@ -213,7 +212,7 @@ const ContributeTabs: React.FC = () => {
             <div className="rounded border border-white/10 bg-neutral-700/40 p-6 text-center">
               <h3 className="mb-3 font-medium text-neutral-200">Bagikan Situs Ini</h3>
               <p className="mb-6 text-sm text-neutral-400">
-                Ceritakan tentang Mops Papua dan ajak lebih banyak orang untuk
+                Sebarkan cerita mop dan ajak lebih banyak orang untuk
                 ikut berkontribusi
               </p>
 
@@ -296,8 +295,7 @@ const ContributeTabs: React.FC = () => {
             </div>
 
             <p className="text-center text-xs text-neutral-500">
-              Terima kasih atas kontribusi Anda! Mari bersama-sama menjaga dan
-              menyebarkan kebahagiaan Papua!
+              Terima kasih atas kontribusi Anda!
             </p>
           </CardContent>
         </Card>
