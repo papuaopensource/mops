@@ -13,6 +13,66 @@ Mops dibangun menggunakan:
 - **TailwindCSS**: CSS framework untuk desain responsif.
 - **shadcn/UI**: Komponen UI yang memudahkan kustomisasi.
 
+## Public API
+
+Data cerita mop tersedia secara publik melalui endpoint berikut:
+
+### `GET /api/stories`
+
+Mengembalikan semua cerita yang sudah dipublikasikan.
+
+**Query parameter (opsional):**
+
+| Parameter | Tipe   | Keterangan                          |
+| --------- | ------ | ----------------------------------- |
+| `tag`     | string | Filter cerita berdasarkan tag       |
+
+**Contoh:**
+```
+GET https://ceritamop.com/api/stories
+GET https://ceritamop.com/api/stories?tag=gereja
+```
+
+**Response:**
+```json
+{
+  "total": 10,
+  "data": [
+    {
+      "id": "vokal-grup",
+      "title": "Vocal Grup",
+      "date": "5 Februari 2026",
+      "tags": ["gereja"],
+      "content": [...]
+    }
+  ]
+}
+```
+
+### `GET /api/stories/{id}`
+
+Mengembalikan satu cerita berdasarkan ID.
+
+**Contoh:**
+```
+GET https://ceritamop.com/api/stories/vokal-grup
+```
+
+**Response:**
+```json
+{
+  "data": {
+    "id": "vokal-grup",
+    "title": "Vocal Grup",
+    "date": "5 Februari 2026",
+    "tags": ["gereja"],
+    "content": [...]
+  }
+}
+```
+
+Jika ID tidak ditemukan, mengembalikan status `404` dengan body `{ "error": "Story not found" }`.
+
 ## Lisensi
 
 Proyek ini dilisensikan di bawah [MIT License](LICENSE).
