@@ -13,11 +13,6 @@ Mops dibangun menggunakan:
 - **TailwindCSS**: CSS framework untuk desain responsif.
 - **shadcn/UI**: Komponen UI yang memudahkan kustomisasi.
 
-## Link Penting
-
-- **Kode Sumber**: [https://github.com/papuaopensource/mops](https://github.com/papuaopensource/mops)
-- **Website**: [https://ceritamop.com](https://ceritamop.com)
-
 ## Lisensi
 
 Proyek ini dilisensikan di bawah [MIT License](LICENSE).
