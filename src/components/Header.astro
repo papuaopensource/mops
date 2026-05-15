@@ -18,19 +18,6 @@ const isActive = (path: string) => {
     </Link>
     <nav class="flex items-center space-x-6">
       <Link
-        href="/"
-        class={`relative py-1 text-sm text-neutral-400 hover:text-neutral-100 transition-colors ${
-          isActive("/") && pathname === "/" ? "text-neutral-100" : ""
-        }`}
-      >
-        teras
-        {
-          isActive("/") && pathname === "/" && (
-            <span class="absolute bottom-0 left-0 h-px w-full bg-neutral-100" />
-          )
-        }
-      </Link>
-      <Link
         href="/cerita/"
         class={`relative py-1 text-sm text-neutral-400 hover:text-neutral-100 transition-colors ${
           isActive("/cerita/") ? "text-neutral-100" : ""
