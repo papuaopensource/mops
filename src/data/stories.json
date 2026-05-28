@@ -2,10 +2,7 @@
   {
     "id": "vokal-grup",
     "title": "Vocal Grup",
-    "date": "3 Juni 2026",
-    "tags": [
-      "gereja"
-    ],
+    "date": "30 Mei 2026",
     "content": [
       {
         "type": "narration",
@@ -46,12 +43,43 @@
     ]
   },
   {
+    "id": "bawa-kolekte",
+    "title": "Bawa Kolekte",
+    "date": "29 Mei 2026",
+    "content": [
+      {
+        "type": "narration",
+        "content": "Satu kali ada ibadah pas mau kumpul persembahan pendeta panggil ibu yakomina"
+      },
+      {
+        "type": "dialogue",
+        "speaker": "Pendeta",
+        "content": "Bu Yakomina, tolong bawakan kolekte"
+      },
+      {
+        "type": "narration",
+        "content": "Ibu dia berdiri jin menuju ke depan baru de bilang sama pendeta"
+      },
+      {
+        "type": "dialogue",
+        "speaker": "Ibu Yakomina",
+        "content": "Bapa lain kali jgn panggil ibu yakomina, tapi panggil saja ibu mina."
+      },
+      {
+        "type": "narration",
+        "content": "Pendeta langsung jawab"
+      },
+      {
+        "type": "dialogue",
+        "speaker": "Pendeta",
+        "content": "eeee yakomina kapan ko dengar Tuhan panggil simon petrus itu SIMPET..!"
+      }
+    ]
+  },
+  {
     "id": "tanya-banyak",
     "title": "Tanya Banyak",
-    "date": "2 Juni 2026",
-    "tags": [
-      "kampung"
-    ],
+    "date": "28 Mei 2026",
     "content": [
       {
         "type": "narration",
@@ -113,43 +141,6 @@
       {
         "type": "narration",
         "content": "🤣🤣🤣"
-      }
-    ]
-  },
-  {
-    "id": "bawa-kolekte",
-    "title": "Bawa Kolekte",
-    "date": "1 Juni 2026",
-    "tags": [
-      "gereja"
-    ],
-    "content": [
-      {
-        "type": "narration",
-        "content": "Satu kali ada ibadah pas mau kumpul persembahan pendeta panggil ibu yakomina"
-      },
-      {
-        "type": "dialogue",
-        "speaker": "Pendeta",
-        "content": "Bu Yakomina, tolong bawakan kolekte"
-      },
-      {
-        "type": "narration",
-        "content": "Ibu dia berdiri jin menuju ke depan baru de bilang sama pendeta"
-      },
-      {
-        "type": "dialogue",
-        "speaker": "Ibu Yakomina",
-        "content": "Bapa lain kali jgn panggil ibu yakomina, tapi panggil saja ibu mina."
-      },
-      {
-        "type": "narration",
-        "content": "Pendeta langsung jawab"
-      },
-      {
-        "type": "dialogue",
-        "speaker": "Pendeta",
-        "content": "eeee yakomina kapan ko dengar Tuhan panggil simon petrus itu SIMPET..!"
       }
     ]
   }
