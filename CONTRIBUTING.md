@@ -31,7 +31,7 @@ ERR_PNPM_IGNORED_BUILDS
 Ignored build scripts
 ```
 
-Jalankan perintah berikut:
+Jalankan perintah berikut pada teriminal:
 
 ```bash
 pnpm approve-builds
