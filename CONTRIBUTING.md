@@ -1,19 +1,19 @@
 # Contributing
 
-Terima kasih sudah ingin berkontribusi! Ada dua cara utama berkontribusi ke Mops.
+Terima kasih atas minat Anda untuk berkontribusi pada Mops. Kontribusi dapat dilakukan melalui dua cara utama: mengirimkan cerita mop atau berkontribusi pada pengembangan kode.
 
-## 1. Kirim Cerita Mop
+## 1. Mengirim Cerita Mop
 
-Punya cerita mop Papua? Kirim lewat [Google Form](https://forms.gle/hB9peLVjARqvPuEJ7) — tidak perlu tahu coding.
+Memiliki cerita mop Papua yang ingin dibagikan? Anda dapat mengirimkannya melalui [Google Form](https://forms.gle/hB9peLVjARqvPuEJ7) tanpa perlu memiliki kemampuan pemrograman.
 
-Cerita yang masuk akan dikurasi sebelum ditampilkan di situs.
+Setiap cerita yang masuk akan melalui proses kurasi sebelum dipublikasikan di situs.
 
 ## 2. Kontribusi Kode
 
 ### Prasyarat
 
-- Node.js 18+
-- pnpm atau npm
+* Node.js 18 atau lebih baru
+* pnpm atau npm
 
 ### Setup
 
@@ -24,9 +24,28 @@ pnpm install
 pnpm dev
 ```
 
-### Menambah Cerita Lewat Kode
+Jika setelah menjalankan `pnpm install` muncul pesan berikut:
 
-Tambahkan entri baru ke array di [`src/data/stories.json`](src/data/stories.json):
+```text
+ERR_PNPM_IGNORED_BUILDS
+Ignored build scripts
+```
+
+Jalankan perintah berikut:
+
+```bash
+pnpm approve-builds
+```
+
+Kemudian:
+
+1. Tekan `a` untuk memilih seluruh paket yang memerlukan persetujuan.
+2. Tekan `Enter`.
+3. Saat muncul konfirmasi `(y/N)`, pilih `y`.
+
+### Menambahkan Cerita Melalui Kode
+
+Tambahkan entri baru ke array pada file [`src/data/stories.json`](src/data/stories.json):
 
 ```json
 {
@@ -36,36 +55,64 @@ Tambahkan entri baru ke array di [`src/data/stories.json`](src/data/stories.json
   "credit": "Nama Pengirim",
   "tags": [],
   "content": [
-    { "type": "narration", "content": "Narasi cerita..." },
-    { "type": "dialogue", "speaker": "Nama", "content": "Dialog..." }
+    {
+      "type": "narration",
+      "content": "Narasi cerita..."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nama",
+      "content": "Dialog..."
+    }
   ]
 }
 ```
 
-Cerita hanya tampil pada atau setelah tanggal `date` yang ditentukan.
+Catatan:
 
-### Alur Kerja
+* Nilai `id` harus unik dan menggunakan format *kebab-case*.
+* Cerita akan ditampilkan pada atau setelah tanggal yang ditentukan pada properti `date`.
 
-1. Fork repositori
-2. Buat branch baru: `git checkout -b nama-branch`
-3. Buat perubahan, jalankan `pnpm run format` sebelum commit
-4. Push dan buka Pull Request ke branch `master`
+### Alur Kerja Kontribusi
+
+1. Fork repositori.
+
+2. Buat branch baru:
+
+   ```bash
+   git checkout -b nama-branch
+   ```
+
+3. Lakukan perubahan yang diperlukan.
+
+4. Jalankan formatter sebelum melakukan commit:
+
+   ```bash
+   pnpm run format
+   ```
+
+5. Commit dan push perubahan ke repositori fork Anda.
+
+6. Buka Pull Request ke branch `master`.
 
 ### Struktur Proyek
 
-```
+```text
 src/
-├── components/   # Komponen Astro & React
+├── components/       # Komponen Astro dan React
 ├── data/
 │   └── stories.json  # Data cerita mop
-├── layouts/      # Layout halaman
+├── layouts/          # Layout halaman
 ├── lib/
-│   └── utils.ts  # Helper functions
-├── pages/        # Routing halaman
-├── styles/       # CSS global
+│   └── utils.ts      # Utility functions
+├── pages/            # Routing halaman
+├── styles/           # Global styles
 └── types/
     └── index.d.ts    # Type definitions (Mop, Content)
 ```
 
+## Bantuan
 
-Ada pertanyaan? Buka [issue](https://github.com/papuaopensource/mops/issues) di GitHub.
+Jika memiliki pertanyaan, silakan buka issue di GitHub:
+
+https://github.com/papuaopensource/mops/issues
