@@ -143,5 +143,73 @@
         "content": "🤣🤣🤣"
       }
     ]
+  },
+  {
+    "id": "bapa di atas",
+    "title": "Bapa di atas",
+    "date": "16 Juni 2026",
+    "content": [
+      {
+        "type": "narration",
+        "content": "Obed kecil toki papen pu rumah"
+      },
+      {
+        "type": "dialogue",
+        "speaker": "Obed",
+        "content": "bapa pendeta.."
+      },
+      {
+        "type": "dialogue",
+        "speaker": "Papen",
+        "content": "iya anak...ada apa ee ??"
+      },
+      {
+        "type": "narration",
+        "content": "Obed sambil kasi tunjuk buah mangga"
+      },
+      {
+        "type": "dialogue",
+        "speaker": "Obed",
+        "content": "ini bapa pu mangga ada jatuh satu.."
+      },
+      {
+        "type": "dialogue",
+        "speaker": "Papen",
+        "content": "oooh adooh ko ni anak jujur Skali ee...kalo anana lain ni dong su bawa akan..ko nama sapa ka?"
+      },
+      {
+        "type": "dialogue",
+        "speaker": "Obed",
+        "content": "sa nama Obed"
+      },
+      {
+        "type": "dialogue",
+        "speaker": "Papen",
+        "content": "bagus Obed, pertahankan ko pu kejujuran ini... berarti ko mama dan papa berhasil ajarkan ko kejujuran...baru ko bapa mana?"
+      },
+      {
+        "type": "dialogue",
+        "speaker": "Obed",
+        "content": "sa bapa su diatas.."
+      },
+      {
+        "type": "dialogue",
+        "speaker": "Papen",
+        "content": "Ado minta maaf... obed harus percaya bapa de sekarang su bahagia di surga..."
+      },
+      {
+        "type": "narration",
+        "content": "Langsung obed geleng-geleng kepala"
+      },
+      {
+        "type": "dialogue",
+        "speaker": "Obed",
+        "content": "bukan diatas itu...tapi, diatas bapa pendeta pung pohon mangga..de yang bikin jatuh ni..!!"
+      },
+      {
+        "type": "narration",
+        "content": "😂😂😂"
+      }
+    ]
   }
 ]
