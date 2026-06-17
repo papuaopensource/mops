@@ -52,8 +52,8 @@ const ContributeTabs: React.FC = () => {
       </TabsList>
 
       {/* Kirim Mop Section */}
-      <TabsContent value="kirim-mop" className="w-full min-h-[480px]">
-        <Card className="w-full min-h-[480px]">
+      <TabsContent value="kirim-mop" className="min-h-[480px] w-full">
+        <Card className="min-h-[480px] w-full">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-neutral-100">
               <FileText className="h-5 w-5" />
@@ -71,11 +71,12 @@ const ContributeTabs: React.FC = () => {
               </p>
               <ul className="mb-4 list-disc space-y-2 pl-5">
                 <li>
-                  <strong className="text-neutral-300">Narasi:</strong> Penjelasan cerita atau kejadian
+                  <strong className="text-neutral-300">Narasi:</strong>{" "}
+                  Penjelasan cerita atau kejadian
                 </li>
                 <li>
-                  <strong className="text-neutral-300">Dialog:</strong> Percakapan antar tokoh yang seru dan
-                  menghibur
+                  <strong className="text-neutral-300">Dialog:</strong>{" "}
+                  Percakapan antar tokoh yang seru dan menghibur
                 </li>
               </ul>
             </div>
@@ -107,7 +108,9 @@ const ContributeTabs: React.FC = () => {
             </div>
 
             <div>
-              <h3 className="mb-2 font-medium text-neutral-200">Cara Kirim Mop:</h3>
+              <h3 className="mb-2 font-medium text-neutral-200">
+                Cara Kirim Mop:
+              </h3>
               <ol className="mb-6 list-decimal space-y-2 pl-5">
                 <li>
                   Siapkan file .txt, .docs, atau .pdf yang berisi mop Anda
@@ -133,8 +136,8 @@ const ContributeTabs: React.FC = () => {
       </TabsContent>
 
       {/* Bantu Website Section */}
-      <TabsContent value="bantu-website" className="w-full min-h-[480px]">
-        <Card className="w-full min-h-[480px]">
+      <TabsContent value="bantu-website" className="min-h-[480px] w-full">
+        <Card className="min-h-[480px] w-full">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-neutral-100">
               <Code className="h-5 w-5" />
@@ -155,7 +158,9 @@ const ContributeTabs: React.FC = () => {
                 <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded border border-white/10 text-neutral-400">
                   <Code className="h-5 w-5" />
                 </div>
-                <h3 className="mb-1 text-sm font-medium text-neutral-300">Perbaiki Bug</h3>
+                <h3 className="mb-1 text-sm font-medium text-neutral-300">
+                  Perbaiki Bug
+                </h3>
                 <p className="text-xs text-neutral-500">
                   Membantu memperbaiki bug atau masalah lainnya di situs
                 </p>
@@ -165,7 +170,9 @@ const ContributeTabs: React.FC = () => {
                 <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded border border-white/10 text-neutral-400">
                   <Heart className="h-5 w-5" />
                 </div>
-                <h3 className="mb-1 text-sm font-medium text-neutral-300">Berikan Saran</h3>
+                <h3 className="mb-1 text-sm font-medium text-neutral-300">
+                  Berikan Saran
+                </h3>
                 <p className="text-xs text-neutral-500">
                   Memberikan saran atau ide fitur baru untuk pengembangan
                 </p>
@@ -175,7 +182,9 @@ const ContributeTabs: React.FC = () => {
                 <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded border border-white/10 text-neutral-400">
                   <Github className="h-5 w-5" />
                 </div>
-                <h3 className="mb-1 text-sm font-medium text-neutral-300">Kirim Kode</h3>
+                <h3 className="mb-1 text-sm font-medium text-neutral-300">
+                  Kirim Kode
+                </h3>
                 <p className="text-xs text-neutral-500">
                   Mengirimkan kode di GitHub untuk pengembangan situs
                 </p>
@@ -195,8 +204,8 @@ const ContributeTabs: React.FC = () => {
       </TabsContent>
 
       {/* Sebarkan Section */}
-      <TabsContent value="sebarkan" className="w-full min-h-[480px]">
-        <Card className="w-full min-h-[480px]">
+      <TabsContent value="sebarkan" className="min-h-[480px] w-full">
+        <Card className="min-h-[480px] w-full">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-neutral-100">
               <Share2 className="h-5 w-5" />
@@ -210,10 +219,12 @@ const ContributeTabs: React.FC = () => {
             <p>Anda juga bisa berkontribusi dengan cara yang sangat mudah:</p>
 
             <div className="rounded border border-white/10 bg-neutral-700/40 p-6 text-center">
-              <h3 className="mb-3 font-medium text-neutral-200">Bagikan Situs Ini</h3>
+              <h3 className="mb-3 font-medium text-neutral-200">
+                Bagikan Situs Ini
+              </h3>
               <p className="mb-6 text-sm text-neutral-400">
-                Sebarkan cerita mop dan ajak lebih banyak orang untuk
-                ikut berkontribusi
+                Sebarkan cerita mop dan ajak lebih banyak orang untuk ikut
+                berkontribusi
               </p>
 
               <div className="flex flex-wrap justify-center gap-3">

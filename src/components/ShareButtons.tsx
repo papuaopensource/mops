@@ -105,11 +105,7 @@ export default function ShareButtons({
         Twitter
       </button>
 
-      <button
-        onClick={copyLink}
-        className={btnClass}
-        aria-label="Salin link"
-      >
+      <button onClick={copyLink} className={btnClass} aria-label="Salin link">
         {copied ? (
           <>
             <Check className="h-3.5 w-3.5 text-green-500" />

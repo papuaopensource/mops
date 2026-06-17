@@ -25,5 +25,7 @@ export default defineConfig({
   },
 
   integrations: [react()],
-  adapter: cloudflare({ platformProxy: { enabled: true, remoteBindings: false } }),
+  adapter: cloudflare({
+    platformProxy: { enabled: true, remoteBindings: false },
+  }),
 });

@@ -165,7 +165,7 @@ export default function CeritaPageComponent({
             {searchTerm && (
               <button
                 onClick={handleResetSearch}
-                className="absolute top-1/2 right-3 -translate-y-1/2 text-neutral-500 hover:text-neutral-200 transition-colors"
+                className="absolute top-1/2 right-3 -translate-y-1/2 text-neutral-500 transition-colors hover:text-neutral-200"
               >
                 <X className="h-4 w-4" />
               </button>
@@ -199,19 +199,31 @@ export default function CeritaPageComponent({
         <div className="space-y-8">
           {visibleMops.map((group) => (
             <div key={group.month} className="space-y-3">
-              <h2 className="text-xs font-medium uppercase tracking-widest text-neutral-500">
+              <h2 className="text-xs font-medium tracking-widest text-neutral-500 uppercase">
                 {group.month}
               </h2>
 
               <div className="space-y-3 border-l border-white/10 pl-4">
                 {group.mops.map((mop) => (
-                  <div key={mop.id} className="border-b border-white/10 pb-4 last:border-0 last:pb-0">
+                  <div
+                    key={mop.id}
+                    className="border-b border-white/10 pb-4 last:border-0 last:pb-0"
+                  >
                     <a href={`/cerita/${mop.id}/`} className="group block">
-                      <h3 className="mb-1 text-sm font-medium text-neutral-200 group-hover:text-neutral-100 transition-colors">
+                      <h3 className="mb-1 text-sm font-medium text-neutral-200 transition-colors group-hover:text-neutral-100">
                         {mop.title}
                       </h3>
                       <p className="mb-1 text-xs text-neutral-500">
-                        {mop.date}{mop.credit && <> · <span className="text-neutral-400">{mop.credit}</span></>}
+                        {mop.date}
+                        {mop.credit && (
+                          <>
+                            {" "}
+                            ·{" "}
+                            <span className="text-neutral-400">
+                              {mop.credit}
+                            </span>
+                          </>
+                        )}
                       </p>
                       <p className="line-clamp-2 text-xs text-neutral-500">
                         {mop.content[0]?.content || ""}

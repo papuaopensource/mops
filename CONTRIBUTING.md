@@ -86,5 +86,4 @@ src/
     └── index.d.ts    # Type definitions (Mop, Content)
 ```
 
-
 Ada pertanyaan? Buka [issue](https://github.com/papuaopensource/mops/issues) di GitHub.

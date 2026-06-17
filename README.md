@@ -23,17 +23,19 @@ Mengembalikan semua cerita yang sudah dipublikasikan.
 
 **Query parameter (opsional):**
 
-| Parameter | Tipe   | Keterangan                          |
-| --------- | ------ | ----------------------------------- |
-| `tag`     | string | Filter cerita berdasarkan tag       |
+| Parameter | Tipe   | Keterangan                    |
+| --------- | ------ | ----------------------------- |
+| `tag`     | string | Filter cerita berdasarkan tag |
 
 **Contoh:**
+
 ```
 GET https://ceritamop.com/api/stories
 GET https://ceritamop.com/api/stories?tag=gereja
 ```
 
 **Response:**
+
 ```json
 {
   "total": 10,
@@ -54,11 +56,13 @@ GET https://ceritamop.com/api/stories?tag=gereja
 Mengembalikan satu cerita berdasarkan ID.
 
 **Contoh:**
+
 ```
 GET https://ceritamop.com/api/stories/vokal-grup
 ```
 
 **Response:**
+
 ```json
 {
   "data": {

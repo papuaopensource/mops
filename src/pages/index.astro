@@ -17,7 +17,9 @@ const todayMop = getTodayMop(mops);
   {
     !todayMop ? (
       <main class="mx-auto max-w-2xl px-4 py-16 text-center">
-        <h1 class="mb-4 text-2xl font-semibold text-neutral-100">Belum Ada Cerita</h1>
+        <h1 class="mb-4 text-2xl font-semibold text-neutral-100">
+          Belum Ada Cerita
+        </h1>
         <p class="mb-8 text-neutral-400">
           Belum ada cerita yang tersedia untuk hari ini. Silakan kembali lagi
           nanti.
@@ -32,12 +34,17 @@ const todayMop = getTodayMop(mops);
     ) : (
       <main class="mx-auto max-w-2xl px-4 py-16">
         <div class="mb-10 text-center">
-          <p class="mb-3 text-xs uppercase tracking-widest text-neutral-500">hari ini</p>
-          <h1 class="mb-2 text-2xl font-semibold text-neutral-100">{todayMop.title}</h1>
+          <p class="mb-3 text-xs tracking-widest text-neutral-500 uppercase">
+            hari ini
+          </p>
+          <h1 class="mb-2 text-2xl font-semibold text-neutral-100">
+            {todayMop.title}
+          </h1>
           <p class="text-sm text-neutral-500">{todayMop.date}</p>
           {todayMop.credit && (
             <p class="mt-1 text-xs text-neutral-500">
-              dikirim oleh <span class="text-neutral-400">{todayMop.credit}</span>
+              dikirim oleh{" "}
+              <span class="text-neutral-400">{todayMop.credit}</span>
             </p>
           )}
         </div>
@@ -46,13 +53,15 @@ const todayMop = getTodayMop(mops);
           {todayMop.content.map((part: any) => (
             <div class="flex flex-col space-y-1">
               {part.type === "narration" ? (
-                <p class="border-l border-white/10 pl-4 text-sm text-neutral-400 leading-relaxed">
+                <p class="border-l border-white/10 pl-4 text-sm leading-relaxed text-neutral-400">
                   {part.content}
                 </p>
               ) : (
                 <>
-                  <div class="text-xs font-medium uppercase tracking-wide text-neutral-500">{part.speaker}</div>
-                  <div class="rounded border border-white/10 bg-neutral-700/50 px-4 py-3 text-sm text-neutral-200 leading-relaxed">
+                  <div class="text-xs font-medium tracking-wide text-neutral-500 uppercase">
+                    {part.speaker}
+                  </div>
+                  <div class="rounded border border-white/10 bg-neutral-700/50 px-4 py-3 text-sm leading-relaxed text-neutral-200">
                     {part.content}
                   </div>
                 </>

@@ -12,7 +12,8 @@ export const GET: APIRoute = (context) => {
     description: "Kumpulan cerita lucu dan anekdot khas Papua",
     site: context.site!,
     items: stories.map((story) => {
-      const snippet = story.content.find((c) => c.type === "narration")?.content ?? "";
+      const snippet =
+        story.content.find((c) => c.type === "narration")?.content ?? "";
       return {
         title: story.title,
         description: snippet,
