@@ -211,5 +211,76 @@
         "content": "😂😂😂"
       }
     ]
+  },
+  {
+    "id": "tentang-hape",
+    "title": "Tentang Hape",
+    "date": "17 Juni 2026",
+    "content": [
+      {
+        "type": "narration",
+        "content": "Ada 1 pace dia baru kenal yang namanya hp. Maklum pace baru turun dari Anggi. Dia lihat dia pu teman-teman di kota Manokwari rata-rata su pengang hp bagus jadi dia tra mo kalah sama dong. Akhirnya dia datang ke konter hp rencana mo beli hp ni."
+      },
+      {
+        "type": "dialogue",
+        "speaker": "Pace",
+        "content": "Ade.... kaka mo beli hp tolong ko carikan hp yang bagus tuk kaka kalo bisa yang ada kameranya ya, biar sa bisa poto-poto di Anggi sana."
+      },
+      {
+        "type": "dialogue",
+        "speaker": "Penjaga konter",
+        "content": "Ok kaka... nah ini ada hp cocok buat kaka ada kamera dan radionya."
+      },
+      {
+        "type": "dialogue",
+        "speaker": "Pace",
+        "content": "Ooo... iyo. Tolong juga ko isi pulsanya 200.000 ribu"
+      },
+      {
+        "type": "dialogue",
+        "speaker": "Penjaga konter",
+        "content": "wah banyak sampe"
+      },
+      {
+        "type": "dialogue",
+        "speaker": "Pace",
+        "content": "Ah iyo to supaya sa tra usah beli-beli pulsa di Anggi sana"
+      },
+      {
+        "type": "dialogue",
+        "speaker": "Penjaga konter",
+        "content": "Tapi pace... di Anggi sana belum ada sinyal"
+      },
+      {
+        "type": "dialogue",
+        "speaker": "Pace",
+        "content": "Ah kalo begitu sekalian saja ko bungkus sinyal 2 buah..."
+      },
+      {
+        "type": "dialogue",
+        "speaker": "Penjaga konter",
+        "content": "....?????"
+      }
+    ]
+  },
+  {
+    "id": "sms-ato-teleponkah",
+    "title": "Sms Ato Teleponkah",
+    "date": "17 Juni 2026",
+    "content": [
+      {
+        "type": "narration",
+        "content": "Pace noge Yunus dari serui baru pegang yang namanya hp"
+      },
+      {
+        "type": "narration",
+        "content": "Saat hp ditangannya hp berbunyi"
+      },
+      {
+        "type": "dialogue",
+        "speaker": "Pace Yunus",
+        "content": "halo...halo... ini sms ato teleponkah...?"
+      }
+    ]
   }
 ]
