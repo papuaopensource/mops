@@ -24,25 +24,6 @@ pnpm install
 pnpm dev
 ```
 
-Jika setelah menjalankan `pnpm install` muncul pesan berikut:
-
-```text
-ERR_PNPM_IGNORED_BUILDS
-Ignored build scripts
-```
-
-Jalankan perintah berikut pada teriminal:
-
-```bash
-pnpm approve-builds
-```
-
-Kemudian:
-
-1. Tekan `a` untuk memilih seluruh paket yang memerlukan persetujuan.
-2. Tekan `Enter`.
-3. Saat muncul konfirmasi `(y/N)`, pilih `y`.
-
 ### Menambah Cerita Lewat Kode
 
 Tambahkan entri baru ke array di [`src/data/stories.json`](src/data/stories.json):
