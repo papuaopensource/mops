@@ -262,25 +262,5 @@
         "content": "....?????"
       }
     ]
-  },
-  {
-    "id": "sms-ato-teleponkah",
-    "title": "Sms Ato Teleponkah",
-    "date": "17 Juni 2026",
-    "content": [
-      {
-        "type": "narration",
-        "content": "Pace noge Yunus dari serui baru pegang yang namanya hp"
-      },
-      {
-        "type": "narration",
-        "content": "Saat hp ditangannya hp berbunyi"
-      },
-      {
-        "type": "dialogue",
-        "speaker": "Pace Yunus",
-        "content": "halo...halo... ini sms ato teleponkah...?"
-      }
-    ]
   }
 ]
