@@ -260,6 +260,10 @@
         "type": "dialogue",
         "speaker": "Penjaga konter",
         "content": "....?????"
+      },
+      {
+        "type": "narration",
+        "content": "😂😂😂"
       }
     ]
   }
