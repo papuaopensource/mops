@@ -1,19 +1,19 @@
 # Contributing
 
-Terima kasih atas minat Anda untuk berkontribusi pada Mops. Kontribusi dapat dilakukan melalui dua cara utama: mengirimkan cerita mop atau berkontribusi pada pengembangan kode.
+Terima kasih sudah ingin berkontribusi! Ada dua cara utama berkontribusi ke Mops.
 
-## 1. Mengirim Cerita Mop
+## 1. Kirim Cerita Mop
 
-Memiliki cerita mop Papua yang ingin dibagikan? Anda dapat mengirimkannya melalui [Google Form](https://forms.gle/hB9peLVjARqvPuEJ7) tanpa perlu memiliki kemampuan pemrograman.
+Punya cerita mop Papua? Kirim lewat [Google Form](https://forms.gle/hB9peLVjARqvPuEJ7) — tidak perlu tahu coding.
 
-Setiap cerita yang masuk akan melalui proses kurasi sebelum dipublikasikan di situs.
+Cerita yang masuk akan dikurasi sebelum ditampilkan di situs.
 
 ## 2. Kontribusi Kode
 
 ### Prasyarat
 
-* Node.js 18 atau lebih baru
-* pnpm atau npm
+- Node.js 18+
+- pnpm atau npm
 
 ### Setup
 
@@ -43,9 +43,9 @@ Kemudian:
 2. Tekan `Enter`.
 3. Saat muncul konfirmasi `(y/N)`, pilih `y`.
 
-### Menambahkan Cerita Melalui Kode
+### Menambah Cerita Lewat Kode
 
-Tambahkan entri baru ke array pada file [`src/data/stories.json`](src/data/stories.json):
+Tambahkan entri baru ke array di [`src/data/stories.json`](src/data/stories.json):
 
 ```json
 {
@@ -55,64 +55,36 @@ Tambahkan entri baru ke array pada file [`src/data/stories.json`](src/data/stori
   "credit": "Nama Pengirim",
   "tags": [],
   "content": [
-    {
-      "type": "narration",
-      "content": "Narasi cerita..."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Nama",
-      "content": "Dialog..."
-    }
+    { "type": "narration", "content": "Narasi cerita..." },
+    { "type": "dialogue", "speaker": "Nama", "content": "Dialog..." }
   ]
 }
 ```
 
-Catatan:
+Cerita hanya tampil pada atau setelah tanggal `date` yang ditentukan.
 
-* Nilai `id` harus unik dan menggunakan format *kebab-case*.
-* Cerita akan ditampilkan pada atau setelah tanggal yang ditentukan pada properti `date`.
+### Alur Kerja
 
-### Alur Kerja Kontribusi
-
-1. Fork repositori.
-
-2. Buat branch baru:
-
-   ```bash
-   git checkout -b nama-branch
-   ```
-
-3. Lakukan perubahan yang diperlukan.
-
-4. Jalankan formatter sebelum melakukan commit:
-
-   ```bash
-   pnpm run format
-   ```
-
-5. Commit dan push perubahan ke repositori fork Anda.
-
-6. Buka Pull Request ke branch `master`.
+1. Fork repositori
+2. Buat branch baru: `git checkout -b nama-branch`
+3. Buat perubahan, jalankan `pnpm run format` sebelum commit
+4. Push dan buka Pull Request ke branch `master`
 
 ### Struktur Proyek
 
-```text
+```
 src/
-├── components/       # Komponen Astro dan React
+├── components/   # Komponen Astro & React
 ├── data/
 │   └── stories.json  # Data cerita mop
-├── layouts/          # Layout halaman
+├── layouts/      # Layout halaman
 ├── lib/
-│   └── utils.ts      # Utility functions
-├── pages/            # Routing halaman
-├── styles/           # Global styles
+│   └── utils.ts  # Helper functions
+├── pages/        # Routing halaman
+├── styles/       # CSS global
 └── types/
     └── index.d.ts    # Type definitions (Mop, Content)
 ```
 
-## Bantuan
 
-Jika memiliki pertanyaan, silakan buka issue di GitHub:
-
-https://github.com/papuaopensource/mops/issues
+Ada pertanyaan? Buka [issue](https://github.com/papuaopensource/mops/issues) di GitHub.
