@@ -211,6 +211,7 @@
         "content": "😂😂😂"
       }
     ]
+<<<<<<< HEAD
   },
   {
     "id": "tentang-hape",
@@ -288,5 +289,7 @@
         "content": "halo...halo... ini sms ato teleponkah...?"
       }
     ]
+=======
+>>>>>>> f02fd856742a38e79b899644f693a703989e5b77
   }
 ]
