@@ -57,6 +57,9 @@
     "typescript": "^5.9.3",
     "wrangler": "^4.80.0"
   },
+  "pnpm": {
+    "onlyBuiltDependencies": ["esbuild", "sharp", "workerd"]
+  },
   "lint-staged": {
     "*.{ts,js,mjs}": [
       "prettier --write"
